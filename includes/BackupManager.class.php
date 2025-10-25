@@ -619,21 +619,11 @@ class BackupManager {
                 throw new Exception("Cloud provider not found or disabled");
             }
             
-            // Get backup file path
-            $backupFile = $this->getBackupFilePath($history);
-            if (!file_exists($backupFile)) {
-                throw new Exception("Backup file not found: {$backupFile}");
+            // Get all backup files for this history
+            $backupFiles = $this->db->fetchAll("SELECT * FROM backup_files WHERE history_id = ?", [$historyId]);
+            if (empty($backupFiles)) {
+                throw new Exception("No backup files found for history ID: {$historyId}");
             }
-            
-            // Create cloud upload record
-            $uploadId = $this->db->insert('cloud_uploads', [
-                'history_id' => $historyId,
-                'provider_id' => $providerId,
-                'remote_path' => $this->generateRemotePath($config, $history),
-                'upload_status' => 'pending',
-                'upload_start' => date('Y-m-d H:i:s'),
-                'file_size' => filesize($backupFile)
-            ]);
             
             // Initialize cloud storage
             $storage = $this->getCloudStorage($provider);
@@ -646,24 +636,62 @@ class BackupManager {
                 throw new Exception("Failed to connect to cloud storage");
             }
             
-            // Update upload status to uploading
-            $this->db->update('cloud_uploads', ['upload_status' => 'uploading'], ['id' => $uploadId]);
+            $uploadedCount = 0;
+            $totalFiles = count($backupFiles);
             
-            // Upload file
-            $remotePath = $this->generateRemotePath($config, $history);
-            $result = $storage->upload($backupFile, $remotePath);
-            
-            if ($result) {
-                // Update upload status to completed
-                $this->db->update('cloud_uploads', [
-                    'upload_status' => 'completed',
-                    'upload_end' => date('Y-m-d H:i:s')
-                ], ['id' => $uploadId]);
+            foreach ($backupFiles as $backupFile) {
+                if (!file_exists($backupFile['file_path'])) {
+                    $this->log("Backup file not found: {$backupFile['file_path']}", 'WARNING');
+                    continue;
+                }
                 
-                $this->log("Successfully uploaded backup to cloud: {$remotePath}", 'INFO');
+                // Create cloud upload record for each file
+                $uploadId = $this->db->insert('cloud_uploads', [
+                    'history_id' => $historyId,
+                    'provider_id' => $providerId,
+                    'remote_path' => $this->generateRemotePath($config, $history, $backupFile),
+                    'upload_status' => 'pending',
+                    'upload_start' => date('Y-m-d H:i:s'),
+                    'file_size' => $backupFile['file_size']
+                ]);
+                
+                try {
+                    // Update upload status to uploading
+                    $this->db->update('cloud_uploads', ['upload_status' => 'uploading'], 'id = ?', [$uploadId]);
+                    
+                    // Upload file
+                    $remotePath = $this->generateRemotePath($config, $history, $backupFile);
+                    $result = $storage->upload($backupFile['file_path'], $remotePath);
+                    
+                    if ($result) {
+                        // Update upload status to completed
+                        $this->db->update('cloud_uploads', [
+                            'upload_status' => 'completed',
+                            'upload_end' => date('Y-m-d H:i:s')
+                        ], 'id = ?', [$uploadId]);
+                        
+                        $this->log("Successfully uploaded backup file to cloud: {$remotePath}", 'INFO');
+                        $uploadedCount++;
+                    } else {
+                        throw new Exception("Cloud upload failed for file: {$backupFile['file_path']}");
+                    }
+                } catch (Exception $e) {
+                    // Update upload status to failed
+                    $this->db->update('cloud_uploads', [
+                        'upload_status' => 'failed',
+                        'error_message' => $e->getMessage(),
+                        'upload_end' => date('Y-m-d H:i:s')
+                    ], 'id = ?', [$uploadId]);
+                    
+                    $this->log("Cloud upload failed for file {$backupFile['file_path']}: " . $e->getMessage(), 'ERROR');
+                }
+            }
+            
+            if ($uploadedCount > 0) {
+                $this->log("Successfully uploaded {$uploadedCount}/{$totalFiles} backup files to cloud", 'INFO');
                 return true;
             } else {
-                throw new Exception("Cloud upload failed");
+                throw new Exception("No files were successfully uploaded to cloud");
             }
             
         } catch (Exception $e) {
@@ -708,12 +736,19 @@ class BackupManager {
     /**
      * Generate remote path for cloud upload
      */
-    private function generateRemotePath($config, $history) {
+    private function generateRemotePath($config, $history, $backupFile = null) {
         $timestamp = date('Y-m-d_H-i-s', strtotime($history['start_time']));
         $configName = preg_replace('/[^a-zA-Z0-9_-]/', '_', $config['name']);
         $backupType = $config['backup_type'];
         
-        return "/backups/{$configName}/{$backupType}_{$timestamp}.tar.gz";
+        if ($backupFile) {
+            // For individual files, use the original filename
+            $fileName = basename($backupFile['file_path']);
+            return "/backups/{$configName}/{$fileName}";
+        } else {
+            // For consolidated backups (legacy)
+            return "/backups/{$configName}/{$backupType}_{$timestamp}.tar.gz";
+        }
     }
     
     /**

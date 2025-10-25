@@ -2746,3 +2746,288 @@ isp_billing
 )
 
 [2025-10-25 15:13:31] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 10
+    [current_step] => Testing MySQL connection...
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 20
+    [current_step] => Connection successful. Starting database backups...
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 31.666666666667
+    [current_step] => Backing up database: ISP-DEMO-5049
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 43.333333333333
+    [current_step] => Backing up database: ISP-NAB-5053
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 55
+    [current_step] => Backing up database: ISP-Shakeel-5051
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 66.666666666667
+    [current_step] => Backing up database: ISP-Super-5052
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 78.333333333333
+    [current_step] => Backing up database: ISP-Taimoor-5054
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 90
+    [current_step] => Backing up database: isp_billing
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [progress] => 100
+    [current_step] => MySQL backup completed successfully
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [end_time] => 2025-10-25 15:22:06
+    [status] => completed
+    [size_bytes] => 443121
+    [file_count] => 6
+    [where_param_0] => 91
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:06] DATABASE - update() called
+[2025-10-25 15:22:06] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:06] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 2
+)
+
+[2025-10-25 15:22:06] Rows affected: 1
+[2025-10-25 15:22:07] DATABASE - update() called
+[2025-10-25 15:22:07] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:07] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:07
+    [where_param_0] => 2
+)
+
+[2025-10-25 15:22:07] Rows affected: 1
+[2025-10-25 15:22:07] DATABASE - update() called
+[2025-10-25 15:22:07] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:07] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 3
+)
+
+[2025-10-25 15:22:07] Rows affected: 1
+[2025-10-25 15:22:09] DATABASE - update() called
+[2025-10-25 15:22:09] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:09] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:09
+    [where_param_0] => 3
+)
+
+[2025-10-25 15:22:09] Rows affected: 1
+[2025-10-25 15:22:09] DATABASE - update() called
+[2025-10-25 15:22:09] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:09] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 4
+)
+
+[2025-10-25 15:22:09] Rows affected: 1
+[2025-10-25 15:22:10] DATABASE - update() called
+[2025-10-25 15:22:10] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:10] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:10
+    [where_param_0] => 4
+)
+
+[2025-10-25 15:22:10] Rows affected: 1
+[2025-10-25 15:22:10] DATABASE - update() called
+[2025-10-25 15:22:10] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:10] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 5
+)
+
+[2025-10-25 15:22:10] Rows affected: 1
+[2025-10-25 15:22:11] DATABASE - update() called
+[2025-10-25 15:22:11] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:11] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:11
+    [where_param_0] => 5
+)
+
+[2025-10-25 15:22:11] Rows affected: 1
+[2025-10-25 15:22:11] DATABASE - update() called
+[2025-10-25 15:22:11] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:11] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 6
+)
+
+[2025-10-25 15:22:11] Rows affected: 1
+[2025-10-25 15:22:12] DATABASE - update() called
+[2025-10-25 15:22:12] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:12] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:12
+    [where_param_0] => 6
+)
+
+[2025-10-25 15:22:12] Rows affected: 1
+[2025-10-25 15:22:12] DATABASE - update() called
+[2025-10-25 15:22:12] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:12] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 7
+)
+
+[2025-10-25 15:22:12] Rows affected: 1
+[2025-10-25 15:22:14] DATABASE - update() called
+[2025-10-25 15:22:14] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:14] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:14
+    [where_param_0] => 7
+)
+
+[2025-10-25 15:22:14] Rows affected: 1
+[2025-10-25 15:22:24] DATABASE - update() called
+[2025-10-25 15:22:24] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 15:22:24] Params: Array
+(
+    [end_time] => 2025-10-25 15:22:24
+    [status] => completed
+    [size_bytes] => 42263369
+    [file_count] => 3
+    [where_param_0] => 92
+)
+
+[2025-10-25 15:22:24] Rows affected: 1
+[2025-10-25 15:22:24] DATABASE - update() called
+[2025-10-25 15:22:24] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:24] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 8
+)
+
+[2025-10-25 15:22:24] Rows affected: 1
+[2025-10-25 15:22:26] DATABASE - update() called
+[2025-10-25 15:22:26] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:26] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:26
+    [where_param_0] => 8
+)
+
+[2025-10-25 15:22:26] Rows affected: 1
+[2025-10-25 15:22:26] DATABASE - update() called
+[2025-10-25 15:22:26] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:26] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 9
+)
+
+[2025-10-25 15:22:26] Rows affected: 1
+[2025-10-25 15:22:28] DATABASE - update() called
+[2025-10-25 15:22:28] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:28] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:28
+    [where_param_0] => 9
+)
+
+[2025-10-25 15:22:28] Rows affected: 1
+[2025-10-25 15:22:28] DATABASE - update() called
+[2025-10-25 15:22:28] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-25 15:22:28] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 10
+)
+
+[2025-10-25 15:22:28] Rows affected: 1
+[2025-10-25 15:22:29] DATABASE - update() called
+[2025-10-25 15:22:29] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-25 15:22:29] Params: Array
+(
+    [upload_status] => completed
+    [upload_end] => 2025-10-25 15:22:29
+    [where_param_0] => 10
+)
+
+[2025-10-25 15:22:29] Rows affected: 1

@@ -98,3 +98,38 @@
 [2025-10-25 15:13:31] [INFO] Backing up: /var/www/isp-50-from-bill/
 [2025-10-25 15:13:31] [INFO] Successfully backed up: /var/www/isp-50-from-bill/ -> /opt/backups/2025-10-25_15-13-27/files/isp-50-from-bill_2025-10-25_15-13-31.tar.gz
 [2025-10-25 15:13:31] [INFO] File backup completed: 3 successful, 0 failed
+[2025-10-25 15:17:07] [ERROR] Cloud upload failed: Backup file not found: /opt/backups/backup_89_2025-10-25_15-13-19.tar.gz
+[2025-10-25 15:17:07] [ERROR] Cloud upload failed: Backup file not found: /opt/backups/backup_90_2025-10-25_15-13-27.tar.gz
+[2025-10-25 15:18:49] [WARNING] Backup file not found: /opt/backups/2025-10-25_15-13-19/mysql/ISP-DEMO-5049_2025-10-25_15-13-19.sql.gz
+[2025-10-25 15:18:49] [WARNING] Backup file not found: /opt/backups/2025-10-25_15-13-19/mysql/ISP-NAB-5053_2025-10-25_15-13-19.sql.gz
+[2025-10-25 15:22:06] [INFO] Backing up MySQL database: ISP-DEMO-5049
+[2025-10-25 15:22:06] [INFO] Successfully backed up MySQL: ISP-DEMO-5049
+[2025-10-25 15:22:06] [INFO] Backing up MySQL database: ISP-NAB-5053
+[2025-10-25 15:22:06] [INFO] Successfully backed up MySQL: ISP-NAB-5053
+[2025-10-25 15:22:06] [INFO] Backing up MySQL database: ISP-Shakeel-5051
+[2025-10-25 15:22:06] [INFO] Successfully backed up MySQL: ISP-Shakeel-5051
+[2025-10-25 15:22:06] [INFO] Backing up MySQL database: ISP-Super-5052
+[2025-10-25 15:22:06] [INFO] Successfully backed up MySQL: ISP-Super-5052
+[2025-10-25 15:22:06] [INFO] Backing up MySQL database: ISP-Taimoor-5054
+[2025-10-25 15:22:06] [INFO] Successfully backed up MySQL: ISP-Taimoor-5054
+[2025-10-25 15:22:06] [INFO] Backing up MySQL database: isp_billing
+[2025-10-25 15:22:06] [INFO] Successfully backed up MySQL: isp_billing
+[2025-10-25 15:22:06] [INFO] MySQL backup completed: 6 successful, 0 failed
+[2025-10-25 15:22:07] [INFO] Successfully uploaded backup file to cloud: /backups/ISP-Billing-DB/ISP-DEMO-5049_2025-10-25_15-22-06.sql.gz
+[2025-10-25 15:22:09] [INFO] Successfully uploaded backup file to cloud: /backups/ISP-Billing-DB/ISP-NAB-5053_2025-10-25_15-22-06.sql.gz
+[2025-10-25 15:22:10] [INFO] Successfully uploaded backup file to cloud: /backups/ISP-Billing-DB/ISP-Shakeel-5051_2025-10-25_15-22-06.sql.gz
+[2025-10-25 15:22:11] [INFO] Successfully uploaded backup file to cloud: /backups/ISP-Billing-DB/ISP-Super-5052_2025-10-25_15-22-06.sql.gz
+[2025-10-25 15:22:12] [INFO] Successfully uploaded backup file to cloud: /backups/ISP-Billing-DB/ISP-Taimoor-5054_2025-10-25_15-22-06.sql.gz
+[2025-10-25 15:22:14] [INFO] Successfully uploaded backup file to cloud: /backups/ISP-Billing-DB/isp_billing_2025-10-25_15-22-06.sql.gz
+[2025-10-25 15:22:14] [INFO] Successfully uploaded 6/6 backup files to cloud
+[2025-10-25 15:22:20] [INFO] Backing up: /var/www/html
+[2025-10-25 15:22:22] [INFO] Successfully backed up: /var/www/html -> /opt/backups/2025-10-25_15-22-20/files/html_2025-10-25_15-22-20.tar.gz
+[2025-10-25 15:22:22] [INFO] Backing up: /var/www/instances/
+[2025-10-25 15:22:24] [INFO] Successfully backed up: /var/www/instances/ -> /opt/backups/2025-10-25_15-22-20/files/instances_2025-10-25_15-22-22.tar.gz
+[2025-10-25 15:22:24] [INFO] Backing up: /var/www/isp-50-from-bill/
+[2025-10-25 15:22:24] [INFO] Successfully backed up: /var/www/isp-50-from-bill/ -> /opt/backups/2025-10-25_15-22-20/files/isp-50-from-bill_2025-10-25_15-22-24.tar.gz
+[2025-10-25 15:22:24] [INFO] File backup completed: 3 successful, 0 failed
+[2025-10-25 15:22:26] [INFO] Successfully uploaded backup file to cloud: /backups/ISP_Billing_Files_-_Multiple_Locations/html_2025-10-25_15-22-20.tar.gz
+[2025-10-25 15:22:28] [INFO] Successfully uploaded backup file to cloud: /backups/ISP_Billing_Files_-_Multiple_Locations/instances_2025-10-25_15-22-22.tar.gz
+[2025-10-25 15:22:29] [INFO] Successfully uploaded backup file to cloud: /backups/ISP_Billing_Files_-_Multiple_Locations/isp-50-from-bill_2025-10-25_15-22-24.tar.gz
+[2025-10-25 15:22:29] [INFO] Successfully uploaded 3/3 backup files to cloud

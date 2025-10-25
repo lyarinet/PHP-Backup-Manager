@@ -78,3 +78,19 @@
 )
 
 [2025-10-25 15:13:27] Executing backup for config ID: 5
+[2025-10-25 15:22:06] API START BACKUP CALLED
+[2025-10-25 15:22:06] Input: Array
+(
+    [action] => start
+    [config_id] => 10
+)
+
+[2025-10-25 15:22:06] Executing backup for config ID: 10
+[2025-10-25 15:22:20] API START BACKUP CALLED
+[2025-10-25 15:22:20] Input: Array
+(
+    [action] => start
+    [config_id] => 5
+)
+
+[2025-10-25 15:22:20] Executing backup for config ID: 5
