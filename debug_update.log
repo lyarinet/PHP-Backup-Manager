@@ -1,0 +1,87 @@
+[2025-10-25 10:36:13] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 10:36:13] POST data: Array
+(
+    [action] => update
+    [config_id] => 3
+    [name] => MySQL Production Server
+    [backup_type] => mysql
+    [files] => 
+    [mysql_host] => 0.0.0.0
+    [mysql_username] => bol
+    [mysql_password] => 123456
+    [mysql_databases] => iptvmonitor
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 10:36:13] Config data built: Array
+(
+    [host] => 0.0.0.0
+    [username] => bol
+    [password] => 123456
+    [databases] => Array
+        (
+            [0] => iptvmonitor
+        )
+
+)
+
+[2025-10-25 10:36:13] BACKUPMANAGER - updateConfig called
+[2025-10-25 10:36:13] Input data: Array
+(
+    [host] => 0.0.0.0
+    [username] => bol
+    [password] => 123456
+    [databases] => Array
+        (
+            [0] => iptvmonitor
+        )
+
+)
+
+[2025-10-25 10:36:13] Before encryption: Array
+(
+    [host] => 0.0.0.0
+    [username] => bol
+    [password] => 123456
+    [databases] => Array
+        (
+            [0] => iptvmonitor
+        )
+
+)
+
+[2025-10-25 10:36:13] After encryption: Array
+(
+    [host] => 0.0.0.0
+    [username] => sHG342WFhCCTjT0NyoySEmRYN1AvUkE4ODI3MXNhcGNoOEZ2YXc9PQ==
+    [password] => ihZhOkkkqYZqoZhUUcuLiE9nQ2lycDR1L0o3d20zN2FLU0ppdGc9PQ==
+    [databases] => Array
+        (
+            [0] => iptvmonitor
+        )
+
+)
+
+[2025-10-25 10:36:13] Update data to DB: Array
+(
+    [name] => MySQL Production Server
+    [config_data] => {"host":"0.0.0.0","username":"sHG342WFhCCTjT0NyoySEmRYN1AvUkE4ODI3MXNhcGNoOEZ2YXc9PQ==","password":"ihZhOkkkqYZqoZhUUcuLiE9nQ2lycDR1L0o3d20zN2FLU0ppdGc9PQ==","databases":["iptvmonitor"]}
+    [backup_type] => mysql
+)
+
+[2025-10-25 10:36:13] DATABASE - update() called
+[2025-10-25 10:36:13] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 10:36:13] Params: Array
+(
+    [name] => MySQL Production Server
+    [config_data] => {"host":"0.0.0.0","username":"sHG342WFhCCTjT0NyoySEmRYN1AvUkE4ODI3MXNhcGNoOEZ2YXc9PQ==","password":"ihZhOkkkqYZqoZhUUcuLiE9nQ2lycDR1L0o3d20zN2FLU0ppdGc9PQ==","databases":["iptvmonitor"]}
+    [backup_type] => mysql
+    [where_param_0] => 3
+)
+
+[2025-10-25 10:36:13] Rows affected: 1
+[2025-10-25 10:36:13] DB update executed
+[2025-10-25 10:36:13] Update completed
