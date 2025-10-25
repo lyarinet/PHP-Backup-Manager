@@ -1304,3 +1304,451 @@ isp_billing
 [2025-10-25 13:39:18] Rows affected: 1
 [2025-10-25 13:39:18] DB update executed
 [2025-10-25 13:39:18] Update completed
+[2025-10-25 13:42:11] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 13:42:11] POST data: Array
+(
+    [action] => update
+    [config_id] => 9
+    [name] => ISP-Billing-DB
+    [backup_type] => mysql
+    [files] => 
+    [mysql_host] => localhost
+    [mysql_username] => admin
+    [mysql_password] => adminkaka
+    [mysql_databases] => ISP-DEMO-5049
+ISP-NAB-5053
+ISP-Shakeel-5051
+ISP-Super-5052
+ISP-Taimoor-5054
+isp_billing
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 13:42:11] Config data built: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:42:11] BACKUPMANAGER - updateConfig called
+[2025-10-25 13:42:11] Input data: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:42:11] Before encryption: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:42:11] After encryption: Array
+(
+    [host] => localhost
+    [username] => /zLFGcbtVEtY+5rCO3nQzStlc3Z1cFJSZ25kTWFxRUliampHZlE9PQ==
+    [password] => XOwKcFqd1Zu384L5tNeE50dQQjRNK2hkS0pFWXpFYnFKR3lQdmc9PQ==
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:42:11] Update data to DB: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"\/zLFGcbtVEtY+5rCO3nQzStlc3Z1cFJSZ25kTWFxRUliampHZlE9PQ==","password":"XOwKcFqd1Zu384L5tNeE50dQQjRNK2hkS0pFWXpFYnFKR3lQdmc9PQ==","databases":["ISP-DEMO-5049\r","ISP-NAB-5053\r","ISP-Shakeel-5051\r","ISP-Super-5052\r","ISP-Taimoor-5054\r","isp_billing"]}
+    [backup_type] => mysql
+)
+
+[2025-10-25 13:42:11] DATABASE - update() called
+[2025-10-25 13:42:11] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 13:42:11] Params: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"\/zLFGcbtVEtY+5rCO3nQzStlc3Z1cFJSZ25kTWFxRUliampHZlE9PQ==","password":"XOwKcFqd1Zu384L5tNeE50dQQjRNK2hkS0pFWXpFYnFKR3lQdmc9PQ==","databases":["ISP-DEMO-5049\r","ISP-NAB-5053\r","ISP-Shakeel-5051\r","ISP-Super-5052\r","ISP-Taimoor-5054\r","isp_billing"]}
+    [backup_type] => mysql
+    [where_param_0] => 9
+)
+
+[2025-10-25 13:42:11] Rows affected: 1
+[2025-10-25 13:42:11] DB update executed
+[2025-10-25 13:42:11] Update completed
+[2025-10-25 13:44:19] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 13:44:19] POST data: Array
+(
+    [action] => update
+    [config_id] => 9
+    [name] => ISP-Billing-DB
+    [backup_type] => mysql
+    [files] => 
+    [mysql_host] => localhost
+    [mysql_username] => admin
+    [mysql_password] => adminkaka
+    [mysql_databases] => ISP-DEMO-5049
+ISP-NAB-5053
+ISP-Shakeel-5051
+ISP-Super-5052
+ISP-Taimoor-5054
+isp_billing
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 13:44:19] Config data built: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:44:19] BACKUPMANAGER - updateConfig called
+[2025-10-25 13:44:19] Input data: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:44:19] Before encryption: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:44:19] After encryption: Array
+(
+    [host] => localhost
+    [username] => Dvz2rLJs0vmMvXjfkHK7bXBUUm1rVVhoMHVialZKQ0hBaW1Xbmc9PQ==
+    [password] => e3XE0xjeiiEYd9NucXw2TFpwMTkrdzgwODM1WW16TkxTcHFRMWc9PQ==
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:44:19] Update data to DB: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"Dvz2rLJs0vmMvXjfkHK7bXBUUm1rVVhoMHVialZKQ0hBaW1Xbmc9PQ==","password":"e3XE0xjeiiEYd9NucXw2TFpwMTkrdzgwODM1WW16TkxTcHFRMWc9PQ==","databases":["ISP-DEMO-5049","ISP-NAB-5053","ISP-Shakeel-5051","ISP-Super-5052","ISP-Taimoor-5054","isp_billing"]}
+    [backup_type] => mysql
+)
+
+[2025-10-25 13:44:19] DATABASE - update() called
+[2025-10-25 13:44:19] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 13:44:19] Params: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"Dvz2rLJs0vmMvXjfkHK7bXBUUm1rVVhoMHVialZKQ0hBaW1Xbmc9PQ==","password":"e3XE0xjeiiEYd9NucXw2TFpwMTkrdzgwODM1WW16TkxTcHFRMWc9PQ==","databases":["ISP-DEMO-5049","ISP-NAB-5053","ISP-Shakeel-5051","ISP-Super-5052","ISP-Taimoor-5054","isp_billing"]}
+    [backup_type] => mysql
+    [where_param_0] => 9
+)
+
+[2025-10-25 13:44:19] Rows affected: 1
+[2025-10-25 13:44:19] DB update executed
+[2025-10-25 13:44:19] Update completed
+[2025-10-25 13:44:43] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 13:44:43] POST data: Array
+(
+    [action] => update
+    [config_id] => 9
+    [name] => ISP-Billing-DB
+    [backup_type] => mysql
+    [files] => 
+    [mysql_host] => localhost
+    [mysql_username] => admin
+    [mysql_password] => adminkaka
+    [mysql_databases] => ISP-DEMO-5049
+ISP-NAB-5053
+ISP-Shakeel-5051
+ISP-Super-5052
+ISP-Taimoor-5054
+sys
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 13:44:43] Config data built: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => sys
+        )
+
+)
+
+[2025-10-25 13:44:43] BACKUPMANAGER - updateConfig called
+[2025-10-25 13:44:43] Input data: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => sys
+        )
+
+)
+
+[2025-10-25 13:44:43] Before encryption: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => sys
+        )
+
+)
+
+[2025-10-25 13:44:43] After encryption: Array
+(
+    [host] => localhost
+    [username] => 1Xtd1fH9DMiwUd57t241gXYwOVRyWGd1ZEJrTjdidUlHbjdqNWc9PQ==
+    [password] => 7cOPdgBWcjY2YwHwDejy1lVja1RUWHE5QzF3MkFQcVBWSTlJTnc9PQ==
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => sys
+        )
+
+)
+
+[2025-10-25 13:44:43] Update data to DB: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"1Xtd1fH9DMiwUd57t241gXYwOVRyWGd1ZEJrTjdidUlHbjdqNWc9PQ==","password":"7cOPdgBWcjY2YwHwDejy1lVja1RUWHE5QzF3MkFQcVBWSTlJTnc9PQ==","databases":["ISP-DEMO-5049","ISP-NAB-5053","ISP-Shakeel-5051","ISP-Super-5052","ISP-Taimoor-5054","sys"]}
+    [backup_type] => mysql
+)
+
+[2025-10-25 13:44:43] DATABASE - update() called
+[2025-10-25 13:44:43] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 13:44:43] Params: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"1Xtd1fH9DMiwUd57t241gXYwOVRyWGd1ZEJrTjdidUlHbjdqNWc9PQ==","password":"7cOPdgBWcjY2YwHwDejy1lVja1RUWHE5QzF3MkFQcVBWSTlJTnc9PQ==","databases":["ISP-DEMO-5049","ISP-NAB-5053","ISP-Shakeel-5051","ISP-Super-5052","ISP-Taimoor-5054","sys"]}
+    [backup_type] => mysql
+    [where_param_0] => 9
+)
+
+[2025-10-25 13:44:43] Rows affected: 1
+[2025-10-25 13:44:43] DB update executed
+[2025-10-25 13:44:43] Update completed
+[2025-10-25 13:44:51] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 13:44:51] POST data: Array
+(
+    [action] => update
+    [config_id] => 9
+    [name] => ISP-Billing-DB
+    [backup_type] => mysql
+    [files] => 
+    [mysql_host] => localhost
+    [mysql_username] => admin
+    [mysql_password] => adminkaka
+    [mysql_databases] => ISP-DEMO-5049
+ISP-NAB-5053
+ISP-Shakeel-5051
+ISP-Super-5052
+ISP-Taimoor-5054
+isp_billing
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 13:44:51] Config data built: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:44:51] BACKUPMANAGER - updateConfig called
+[2025-10-25 13:44:51] Input data: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:44:51] Before encryption: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:44:51] After encryption: Array
+(
+    [host] => localhost
+    [username] => uDaXFzWKs5uo3bcqDIW09ms2Q3FjT1ZybTFzYmVGeVJDSzY1YkE9PQ==
+    [password] => rsoU6eEnUeuKxft6o7odBXEyYTVYN3R1YmUwTzNDcE5RV3R3bVE9PQ==
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+)
+
+[2025-10-25 13:44:51] Update data to DB: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"uDaXFzWKs5uo3bcqDIW09ms2Q3FjT1ZybTFzYmVGeVJDSzY1YkE9PQ==","password":"rsoU6eEnUeuKxft6o7odBXEyYTVYN3R1YmUwTzNDcE5RV3R3bVE9PQ==","databases":["ISP-DEMO-5049","ISP-NAB-5053","ISP-Shakeel-5051","ISP-Super-5052","ISP-Taimoor-5054","isp_billing"]}
+    [backup_type] => mysql
+)
+
+[2025-10-25 13:44:51] DATABASE - update() called
+[2025-10-25 13:44:51] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 13:44:51] Params: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"uDaXFzWKs5uo3bcqDIW09ms2Q3FjT1ZybTFzYmVGeVJDSzY1YkE9PQ==","password":"rsoU6eEnUeuKxft6o7odBXEyYTVYN3R1YmUwTzNDcE5RV3R3bVE9PQ==","databases":["ISP-DEMO-5049","ISP-NAB-5053","ISP-Shakeel-5051","ISP-Super-5052","ISP-Taimoor-5054","isp_billing"]}
+    [backup_type] => mysql
+    [where_param_0] => 9
+)
+
+[2025-10-25 13:44:51] Rows affected: 1
+[2025-10-25 13:44:51] DB update executed
+[2025-10-25 13:44:51] Update completed

@@ -59,7 +59,7 @@ function handleCreateConfig() {
                 'host' => sanitizeInput($_POST['mysql_host'] ?? 'localhost'),
                 'username' => sanitizeInput($_POST['mysql_username'] ?? ''),
                 'password' => $_POST['mysql_password'] ?? '',
-                'databases' => array_filter(explode("\n", $_POST['mysql_databases'] ?? ''))
+                'databases' => array_filter(array_map('trim', explode("\n", str_replace("\r", '', $_POST['mysql_databases'] ?? ''))))
             ];
             break;
         case 'postgresql':
@@ -67,7 +67,7 @@ function handleCreateConfig() {
                 'host' => sanitizeInput($_POST['postgres_host'] ?? 'localhost'),
                 'username' => sanitizeInput($_POST['postgres_username'] ?? ''),
                 'password' => $_POST['postgres_password'] ?? '',
-                'databases' => array_filter(explode("\n", $_POST['postgres_databases'] ?? ''))
+                'databases' => array_filter(array_map('trim', explode("\n", str_replace("\r", '', $_POST['postgres_databases'] ?? ''))))
             ];
             break;
     }
@@ -102,7 +102,7 @@ function handleUpdateConfig() {
                 'host' => sanitizeInput($_POST['mysql_host'] ?? 'localhost'),
                 'username' => sanitizeInput($_POST['mysql_username'] ?? ''),
                 'password' => $_POST['mysql_password'] ?? '',
-                'databases' => array_filter(explode("\n", $_POST['mysql_databases'] ?? ''))
+                'databases' => array_filter(array_map('trim', explode("\n", str_replace("\r", '', $_POST['mysql_databases'] ?? ''))))
             ];
             break;
         case 'postgresql':
@@ -110,7 +110,7 @@ function handleUpdateConfig() {
                 'host' => sanitizeInput($_POST['postgres_host'] ?? 'localhost'),
                 'username' => sanitizeInput($_POST['postgres_username'] ?? ''),
                 'password' => $_POST['postgres_password'] ?? '',
-                'databases' => array_filter(explode("\n", $_POST['postgres_databases'] ?? ''))
+                'databases' => array_filter(array_map('trim', explode("\n", str_replace("\r", '', $_POST['postgres_databases'] ?? ''))))
             ];
             break;
     }
@@ -900,19 +900,21 @@ $successMessages = [
                 return;
             }
             
-            // Get previously selected databases
-            const selectedDatabases = type === 'mysql' ? (window.selectedMySQLDatabases || []) : (window.selectedPostgresDatabases || []);
+            // Get previously selected databases and clean them
+            const rawSelectedDatabases = type === 'mysql' ? (window.selectedMySQLDatabases || []) : (window.selectedPostgresDatabases || []);
+            const selectedDatabases = rawSelectedDatabases.map(db => db.replace(/\r/g, '').trim());
             
             // Create checkboxes for each database
             databases.forEach((db, index) => {
                 const checkboxId = `${type}_db_${index}`;
-                const isChecked = selectedDatabases.includes(db);
+                const cleanDb = db.replace(/\r/g, '').trim();
+                const isChecked = selectedDatabases.includes(cleanDb);
                 const checkbox = document.createElement('div');
                 checkbox.className = 'form-check';
                 checkbox.innerHTML = `
-                    <input class="form-check-input" type="checkbox" id="${checkboxId}" value="${db}" ${isChecked ? 'checked' : ''} onchange="updateSelectedDatabases('${type}')">
+                    <input class="form-check-input" type="checkbox" id="${checkboxId}" value="${cleanDb}" ${isChecked ? 'checked' : ''} onchange="updateSelectedDatabases('${type}')">
                     <label class="form-check-label" for="${checkboxId}">
-                        <i class="bi bi-database me-1"></i>${db}
+                        <i class="bi bi-database me-1"></i>${cleanDb}
                     </label>
                 `;
                 container.appendChild(checkbox);
