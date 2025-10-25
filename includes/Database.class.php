@@ -9,9 +9,66 @@ class Database {
     private $dbPath;
     
     public function __construct($dbPath = null) {
-        $this->dbPath = $dbPath ?: DB_PATH;
+        $this->dbPath = $this->getDatabasePath($dbPath);
         $this->connect();
         $this->runMigrations();
+    }
+    
+    /**
+     * Get database path with dynamic detection
+     * @param string|null $dbPath Custom database path
+     * @return string Database file path
+     */
+    private function getDatabasePath($dbPath = null) {
+        // If custom path provided, use it
+        if ($dbPath !== null) {
+            return $dbPath;
+        }
+        
+        // Try to get path from constant if defined
+        if (defined('DB_PATH')) {
+            return DB_PATH;
+        }
+        
+        // Auto-detect the database path
+        $possiblePaths = [
+            // Current directory
+            __DIR__ . '/../backups.db',
+            // Parent directory
+            dirname(__DIR__) . '/backups.db',
+            // Application root
+            (defined('APP_ROOT') ? APP_ROOT : dirname(__DIR__)) . '/backups.db',
+            // Relative to current working directory
+            getcwd() . '/backups.db',
+            // Relative to script directory
+            dirname($_SERVER['SCRIPT_FILENAME'] ?? __FILE__) . '/backups.db'
+        ];
+        
+        // Check each possible path
+        foreach ($possiblePaths as $path) {
+            $realPath = realpath(dirname($path)) . '/' . basename($path);
+            
+            // If file exists, use it
+            if (file_exists($realPath)) {
+                return $realPath;
+            }
+            
+            // If directory is writable, create the database file there
+            if (is_writable(dirname($realPath))) {
+                return $realPath;
+            }
+        }
+        
+        // Fallback to current directory
+        $fallbackPath = __DIR__ . '/../backups.db';
+        
+        // Ensure directory exists and is writable
+        $dbDir = dirname($fallbackPath);
+        if (!is_dir($dbDir)) {
+            mkdir($dbDir, 0755, true);
+        }
+        
+        return $fallbackPath;
     }
     
     private function connect() {
@@ -249,5 +306,21 @@ class Database {
     
     public function setSetting($key, $value) {
         $this->query("INSERT OR REPLACE INTO settings (setting_key, setting_value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP)", [$key, $value]);
+    }
+    
+    /**
+     * Get the current database path
+     * @return string Database file path
+     */
+    public function getCurrentDatabasePath() {
+        return $this->dbPath;
+    }
+    
+    /**
+     * Check if database file exists and is accessible
+     * @return bool True if database is accessible
+     */
+    public function isDatabaseAccessible() {
+        return file_exists($this->dbPath) && is_readable($this->dbPath) && is_writable(dirname($this->dbPath));
     }
 }
