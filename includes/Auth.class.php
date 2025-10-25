@@ -12,6 +12,14 @@ class Auth {
     }
     
     public function login($username, $password) {
+        // Check IP whitelist before authentication
+        require_once __DIR__ . '/IPWhitelist.class.php';
+        $ipWhitelist = new IPWhitelist($this->db);
+        if (!$ipWhitelist->isIPAllowed($ipWhitelist->getCurrentIP())) {
+            $this->db->logActivity(null, 'login_denied', 'Login denied - IP not whitelisted: ' . $ipWhitelist->getCurrentIP());
+            return false;
+        }
+        
         $user = $this->db->fetch(
             "SELECT * FROM users WHERE username = ?", 
             [$username]

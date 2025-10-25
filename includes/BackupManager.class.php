@@ -82,6 +82,9 @@ class BackupManager {
                 $this->db->logActivity($userId, 'backup_completed', "Backup completed: {$config['name']}");
             }
             
+            // Trigger cloud upload if enabled
+            $this->handleCloudUpload($historyId);
+            
             return $result;
             
         } catch (Exception $e) {
@@ -574,5 +577,190 @@ class BackupManager {
         
         // Also log to PHP error log
         error_log($message);
+    }
+    
+    /**
+     * Upload backup to cloud storage
+     */
+    public function uploadToCloud($historyId, $providerId = null) {
+        try {
+            // Get backup history
+            $history = $this->db->fetch("SELECT * FROM backup_history WHERE id = ?", [$historyId]);
+            if (!$history) {
+                throw new Exception("Backup history not found");
+            }
+            
+            // Get backup configuration
+            $config = $this->db->fetch("SELECT * FROM backup_configs WHERE id = ?", [$history['config_id']]);
+            if (!$config) {
+                throw new Exception("Backup configuration not found");
+            }
+            
+            // Check if cloud upload is enabled for this config
+            $configData = json_decode($config['config_data'], true);
+            $configData = $this->decryptConfigData($configData);
+            
+            if (!isset($configData['cloud_enabled']) || !$configData['cloud_enabled']) {
+                $this->log("Cloud upload disabled for configuration: {$config['name']}", 'INFO');
+                return false;
+            }
+            
+            // Get cloud provider
+            if ($providerId === null) {
+                $providerId = $configData['cloud_provider_id'] ?? null;
+            }
+            
+            if (!$providerId) {
+                throw new Exception("No cloud provider configured");
+            }
+            
+            $provider = $this->db->fetch("SELECT * FROM cloud_providers WHERE id = ? AND enabled = 1", [$providerId]);
+            if (!$provider) {
+                throw new Exception("Cloud provider not found or disabled");
+            }
+            
+            // Get backup file path
+            $backupFile = $this->getBackupFilePath($history);
+            if (!file_exists($backupFile)) {
+                throw new Exception("Backup file not found: {$backupFile}");
+            }
+            
+            // Create cloud upload record
+            $uploadId = $this->db->insert('cloud_uploads', [
+                'history_id' => $historyId,
+                'provider_id' => $providerId,
+                'remote_path' => $this->generateRemotePath($config, $history),
+                'upload_status' => 'pending',
+                'upload_start' => date('Y-m-d H:i:s'),
+                'file_size' => filesize($backupFile)
+            ]);
+            
+            // Initialize cloud storage
+            $storage = $this->getCloudStorage($provider);
+            if (!$storage) {
+                throw new Exception("Failed to initialize cloud storage");
+            }
+            
+            // Connect to cloud storage
+            if (!$storage->connect()) {
+                throw new Exception("Failed to connect to cloud storage");
+            }
+            
+            // Update upload status to uploading
+            $this->db->update('cloud_uploads', ['upload_status' => 'uploading'], ['id' => $uploadId]);
+            
+            // Upload file
+            $remotePath = $this->generateRemotePath($config, $history);
+            $result = $storage->upload($backupFile, $remotePath);
+            
+            if ($result) {
+                // Update upload status to completed
+                $this->db->update('cloud_uploads', [
+                    'upload_status' => 'completed',
+                    'upload_end' => date('Y-m-d H:i:s')
+                ], ['id' => $uploadId]);
+                
+                $this->log("Successfully uploaded backup to cloud: {$remotePath}", 'INFO');
+                return true;
+            } else {
+                throw new Exception("Cloud upload failed");
+            }
+            
+        } catch (Exception $e) {
+            // Update upload status to failed
+            if (isset($uploadId)) {
+                $this->db->update('cloud_uploads', [
+                    'upload_status' => 'failed',
+                    'error_message' => $e->getMessage(),
+                    'upload_end' => date('Y-m-d H:i:s')
+                ], ['id' => $uploadId]);
+            }
+            
+            $this->log("Cloud upload failed: " . $e->getMessage(), 'ERROR');
+            return false;
+        }
+    }
+    
+    /**
+     * Get cloud storage instance
+     */
+    private function getCloudStorage($provider) {
+        $type = $provider['type'];
+        
+        switch ($type) {
+            case 'ftp':
+                require_once __DIR__ . '/storage/FTPStorage.class.php';
+                return new FTPStorage($provider, $this->db);
+                
+            case 's3':
+                require_once __DIR__ . '/storage/S3Storage.class.php';
+                return new S3Storage($provider, $this->db);
+                
+            case 'google_drive':
+                require_once __DIR__ . '/storage/GoogleDriveStorage.class.php';
+                return new GoogleDriveStorage($provider, $this->db);
+                
+            default:
+                throw new Exception("Unsupported cloud storage type: {$type}");
+        }
+    }
+    
+    /**
+     * Generate remote path for cloud upload
+     */
+    private function generateRemotePath($config, $history) {
+        $timestamp = date('Y-m-d_H-i-s', strtotime($history['start_time']));
+        $configName = preg_replace('/[^a-zA-Z0-9_-]/', '_', $config['name']);
+        $backupType = $config['backup_type'];
+        
+        return "/backups/{$configName}/{$backupType}_{$timestamp}.tar.gz";
+    }
+    
+    /**
+     * Get backup file path from history
+     */
+    private function getBackupFilePath($history) {
+        // This would need to be implemented based on how backup files are stored
+        // For now, we'll assume files are in the backup directory with a naming pattern
+        $timestamp = date('Y-m-d_H-i-s', strtotime($history['start_time']));
+        return $this->backupDir . "/backup_{$history['id']}_{$timestamp}.tar.gz";
+    }
+    
+    /**
+     * Auto-upload to cloud if enabled
+     */
+    public function handleCloudUpload($historyId) {
+        try {
+            // Check if auto-upload is enabled globally
+            $autoUpload = $this->db->getSetting('auto_cloud_upload', false);
+            if (!$autoUpload) {
+                return false;
+            }
+            
+            // Get backup configuration
+            $history = $this->db->fetch("SELECT * FROM backup_history WHERE id = ?", [$historyId]);
+            if (!$history) {
+                return false;
+            }
+            
+            $config = $this->db->fetch("SELECT * FROM backup_configs WHERE id = ?", [$history['config_id']]);
+            if (!$config) {
+                return false;
+            }
+            
+            $configData = json_decode($config['config_data'], true);
+            $configData = $this->decryptConfigData($configData);
+            
+            // Check if cloud upload is enabled for this specific config
+            if (isset($configData['cloud_enabled']) && $configData['cloud_enabled']) {
+                return $this->uploadToCloud($historyId);
+            }
+            
+            return false;
+            
+        } catch (Exception $e) {
+            $this->log("Auto cloud upload failed: " . $e->getMessage(), 'ERROR');
+            return false;
+        }
     }
 }

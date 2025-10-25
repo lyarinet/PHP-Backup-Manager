@@ -98,10 +98,15 @@ $sql = "
         bh.*,
         bc.name as config_name,
         bc.backup_type,
-        COUNT(bf.id) as file_count
+        COUNT(bf.id) as file_count,
+        GROUP_CONCAT(cu.upload_status) as cloud_status,
+        GROUP_CONCAT(cp.name) as cloud_providers,
+        GROUP_CONCAT(cu.upload_end) as cloud_upload_end
     FROM backup_history bh
     JOIN backup_configs bc ON bh.config_id = bc.id
     LEFT JOIN backup_files bf ON bh.id = bf.history_id
+    LEFT JOIN cloud_uploads cu ON bh.id = cu.history_id
+    LEFT JOIN cloud_providers cp ON cu.provider_id = cp.id
     {$whereClause}
     GROUP BY bh.id
     ORDER BY bh.start_time DESC
@@ -185,6 +190,16 @@ $successMessages = [
                     <li class="nav-item">
                         <a class="nav-link" href="settings_paths.php">
                             <i class="bi bi-folder me-1"></i>Path Settings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_ip.php">
+                            <i class="bi bi-shield-lock me-1"></i>IP Whitelist
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_cloud.php">
+                            <i class="bi bi-cloud me-1"></i>Cloud Storage
                         </a>
                     </li>
                 </ul>
@@ -392,6 +407,7 @@ $successMessages = [
                                     <th>Status</th>
                                     <th>Size</th>
                                     <th>Files</th>
+                                    <th>Cloud</th>
                                     <th>Start Time</th>
                                     <th>Duration</th>
                                     <th>Actions</th>
@@ -437,6 +453,49 @@ $successMessages = [
                                         </td>
                                         <td>
                                             <span class="badge bg-info"><?php echo $backup['file_count']; ?></span>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($backup['cloud_status']) {
+                                                $cloudStatuses = explode(',', $backup['cloud_status']);
+                                                $cloudProviders = explode(',', $backup['cloud_providers']);
+                                                
+                                                foreach ($cloudStatuses as $index => $status) {
+                                                    $provider = $cloudProviders[$index] ?? 'Unknown';
+                                                    $statusClass = '';
+                                                    $statusIcon = '';
+                                                    
+                                                    switch ($status) {
+                                                        case 'completed':
+                                                            $statusClass = 'success';
+                                                            $statusIcon = 'cloud-check';
+                                                            break;
+                                                        case 'failed':
+                                                            $statusClass = 'danger';
+                                                            $statusIcon = 'cloud-x';
+                                                            break;
+                                                        case 'uploading':
+                                                            $statusClass = 'warning';
+                                                            $statusIcon = 'cloud-upload';
+                                                            break;
+                                                        case 'pending':
+                                                            $statusClass = 'secondary';
+                                                            $statusIcon = 'cloud';
+                                                            break;
+                                                        default:
+                                                            $statusClass = 'light';
+                                                            $statusIcon = 'cloud';
+                                                    }
+                                                    
+                                                    echo '<span class="badge bg-' . $statusClass . ' me-1" title="' . $provider . '">';
+                                                    echo '<i class="bi bi-' . $statusIcon . ' me-1"></i>';
+                                                    echo ucfirst($status);
+                                                    echo '</span>';
+                                                }
+                                            } else {
+                                                echo '<span class="text-muted">No cloud upload</span>';
+                                            }
+                                            ?>
                                         </td>
                                         <td>
                                             <?php echo date('M j, Y H:i', strtotime($backup['start_time'])); ?>

@@ -75,6 +75,16 @@ $backupDirSize = getDirectorySize($db->getSetting('backup_directory', BACKUP_DIR
                             <i class="bi bi-folder me-1"></i>Path Settings
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_ip.php">
+                            <i class="bi bi-shield-lock me-1"></i>IP Whitelist
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_cloud.php">
+                            <i class="bi bi-cloud me-1"></i>Cloud Storage
+                        </a>
+                    </li>
                 </ul>
                 
                 <ul class="navbar-nav">
@@ -394,6 +404,7 @@ $backupDirSize = getDirectorySize($db->getSetting('backup_directory', BACKUP_DIR
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
         // Quick backup functionality

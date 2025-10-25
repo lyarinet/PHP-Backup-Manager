@@ -1752,3 +1752,647 @@ isp_billing
 [2025-10-25 13:44:51] Rows affected: 1
 [2025-10-25 13:44:51] DB update executed
 [2025-10-25 13:44:51] Update completed
+[2025-10-25 13:46:01] DATABASE - update() called
+[2025-10-25 13:46:01] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:01] Params: Array
+(
+    [progress] => 10
+    [current_step] => Testing MySQL connection...
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:01] Rows affected: 1
+[2025-10-25 13:46:01] DATABASE - update() called
+[2025-10-25 13:46:01] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:01] Params: Array
+(
+    [progress] => 20
+    [current_step] => Connection successful. Starting database backups...
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:01] Rows affected: 1
+[2025-10-25 13:46:01] DATABASE - update() called
+[2025-10-25 13:46:01] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:01] Params: Array
+(
+    [progress] => 31.666666666667
+    [current_step] => Backing up database: ISP-DEMO-5049
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:01] Rows affected: 1
+[2025-10-25 13:46:01] DATABASE - update() called
+[2025-10-25 13:46:01] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:01] Params: Array
+(
+    [progress] => 43.333333333333
+    [current_step] => Backing up database: ISP-NAB-5053
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:01] Rows affected: 1
+[2025-10-25 13:46:02] DATABASE - update() called
+[2025-10-25 13:46:02] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:02] Params: Array
+(
+    [progress] => 55
+    [current_step] => Backing up database: ISP-Shakeel-5051
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:02] Rows affected: 1
+[2025-10-25 13:46:02] DATABASE - update() called
+[2025-10-25 13:46:02] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:02] Params: Array
+(
+    [progress] => 66.666666666667
+    [current_step] => Backing up database: ISP-Super-5052
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:02] Rows affected: 1
+[2025-10-25 13:46:02] DATABASE - update() called
+[2025-10-25 13:46:02] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:02] Params: Array
+(
+    [progress] => 78.333333333333
+    [current_step] => Backing up database: ISP-Taimoor-5054
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:02] Rows affected: 1
+[2025-10-25 13:46:02] DATABASE - update() called
+[2025-10-25 13:46:02] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:02] Params: Array
+(
+    [progress] => 90
+    [current_step] => Backing up database: isp_billing
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:02] Rows affected: 1
+[2025-10-25 13:46:02] DATABASE - update() called
+[2025-10-25 13:46:02] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:46:02] Params: Array
+(
+    [progress] => 100
+    [current_step] => MySQL backup completed successfully
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:02] Rows affected: 1
+[2025-10-25 13:46:02] DATABASE - update() called
+[2025-10-25 13:46:02] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 13:46:02] Params: Array
+(
+    [end_time] => 2025-10-25 13:46:02
+    [status] => completed
+    [size_bytes] => 442286
+    [file_count] => 6
+    [where_param_0] => 81
+)
+
+[2025-10-25 13:46:02] Rows affected: 1
+[2025-10-25 13:48:00] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 13:48:00] POST data: Array
+(
+    [action] => update
+    [config_id] => 5
+    [name] => ISP Billing Files - Multiple Locations
+    [backup_type] => files
+    [files] => /var/www/html
+/var/www/instances/
+/var/www/isp-50-from-bill/
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 13:48:00] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/html
+            [1] => /var/www/instances/
+            [2] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 13:48:00] BACKUPMANAGER - updateConfig called
+[2025-10-25 13:48:00] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/html
+            [1] => /var/www/instances/
+            [2] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 13:48:00] Before encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/html
+            [1] => /var/www/instances/
+            [2] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 13:48:00] After encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/html
+            [1] => /var/www/instances/
+            [2] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 13:48:00] Update data to DB: Array
+(
+    [name] => ISP Billing Files - Multiple Locations
+    [config_data] => {"files":["\/var\/www\/html\r","\/var\/www\/instances\/\r","\/var\/www\/isp-50-from-bill\/"]}
+    [backup_type] => files
+)
+
+[2025-10-25 13:48:00] DATABASE - update() called
+[2025-10-25 13:48:00] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 13:48:00] Params: Array
+(
+    [name] => ISP Billing Files - Multiple Locations
+    [config_data] => {"files":["\/var\/www\/html\r","\/var\/www\/instances\/\r","\/var\/www\/isp-50-from-bill\/"]}
+    [backup_type] => files
+    [where_param_0] => 5
+)
+
+[2025-10-25 13:48:00] Rows affected: 1
+[2025-10-25 13:48:00] DB update executed
+[2025-10-25 13:48:00] Update completed
+[2025-10-25 13:48:15] DATABASE - update() called
+[2025-10-25 13:48:15] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 13:48:15] Params: Array
+(
+    [end_time] => 2025-10-25 13:48:15
+    [status] => completed
+    [size_bytes] => 17694149
+    [file_count] => 3
+    [where_param_0] => 82
+)
+
+[2025-10-25 13:48:15] Rows affected: 1
+[2025-10-25 13:59:46] DATABASE - update() called
+[2025-10-25 13:59:46] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:46] Params: Array
+(
+    [progress] => 10
+    [current_step] => Testing MySQL connection...
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:46] Rows affected: 1
+[2025-10-25 13:59:46] DATABASE - update() called
+[2025-10-25 13:59:46] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:46] Params: Array
+(
+    [progress] => 20
+    [current_step] => Connection successful. Starting database backups...
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:46] Rows affected: 1
+[2025-10-25 13:59:46] DATABASE - update() called
+[2025-10-25 13:59:46] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:46] Params: Array
+(
+    [progress] => 31.666666666667
+    [current_step] => Backing up database: ISP-DEMO-5049
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:46] Rows affected: 1
+[2025-10-25 13:59:46] DATABASE - update() called
+[2025-10-25 13:59:46] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:46] Params: Array
+(
+    [progress] => 43.333333333333
+    [current_step] => Backing up database: ISP-NAB-5053
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:46] Rows affected: 1
+[2025-10-25 13:59:46] DATABASE - update() called
+[2025-10-25 13:59:46] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:46] Params: Array
+(
+    [progress] => 55
+    [current_step] => Backing up database: ISP-Shakeel-5051
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:46] Rows affected: 1
+[2025-10-25 13:59:46] DATABASE - update() called
+[2025-10-25 13:59:46] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:46] Params: Array
+(
+    [progress] => 66.666666666667
+    [current_step] => Backing up database: ISP-Super-5052
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:46] Rows affected: 1
+[2025-10-25 13:59:47] DATABASE - update() called
+[2025-10-25 13:59:47] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:47] Params: Array
+(
+    [progress] => 78.333333333333
+    [current_step] => Backing up database: ISP-Taimoor-5054
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:47] Rows affected: 1
+[2025-10-25 13:59:47] DATABASE - update() called
+[2025-10-25 13:59:47] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:47] Params: Array
+(
+    [progress] => 90
+    [current_step] => Backing up database: isp_billing
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:47] Rows affected: 1
+[2025-10-25 13:59:47] DATABASE - update() called
+[2025-10-25 13:59:47] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 13:59:47] Params: Array
+(
+    [progress] => 100
+    [current_step] => MySQL backup completed successfully
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:47] Rows affected: 1
+[2025-10-25 13:59:47] DATABASE - update() called
+[2025-10-25 13:59:47] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 13:59:47] Params: Array
+(
+    [end_time] => 2025-10-25 13:59:47
+    [status] => completed
+    [size_bytes] => 442282
+    [file_count] => 6
+    [where_param_0] => 83
+)
+
+[2025-10-25 13:59:47] Rows affected: 1
+[2025-10-25 13:59:54] DATABASE - update() called
+[2025-10-25 13:59:54] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 13:59:54] Params: Array
+(
+    [end_time] => 2025-10-25 13:59:54
+    [status] => completed
+    [size_bytes] => 17699471
+    [file_count] => 3
+    [where_param_0] => 84
+)
+
+[2025-10-25 13:59:54] Rows affected: 1
+[2025-10-25 14:57:49] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 14:57:49] POST data: Array
+(
+    [action] => update
+    [config_id] => 5
+    [name] => ISP Billing Files - Multiple Locations
+    [backup_type] => files
+    [files] => /var/www/html
+/var/www/instances/
+/var/www/isp-50-from-bill/
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:49] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/html
+            [1] => /var/www/instances/
+            [2] => /var/www/isp-50-from-bill/
+        )
+
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:49] BACKUPMANAGER - updateConfig called
+[2025-10-25 14:57:49] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/html
+            [1] => /var/www/instances/
+            [2] => /var/www/isp-50-from-bill/
+        )
+
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:49] Before encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/html
+            [1] => /var/www/instances/
+            [2] => /var/www/isp-50-from-bill/
+        )
+
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:49] After encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/html
+            [1] => /var/www/instances/
+            [2] => /var/www/isp-50-from-bill/
+        )
+
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:49] Update data to DB: Array
+(
+    [name] => ISP Billing Files - Multiple Locations
+    [config_data] => {"files":["\/var\/www\/html\r","\/var\/www\/instances\/\r","\/var\/www\/isp-50-from-bill\/"],"cloud_enabled":true,"cloud_provider_id":2}
+    [backup_type] => files
+)
+
+[2025-10-25 14:57:49] DATABASE - update() called
+[2025-10-25 14:57:49] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 14:57:49] Params: Array
+(
+    [name] => ISP Billing Files - Multiple Locations
+    [config_data] => {"files":["\/var\/www\/html\r","\/var\/www\/instances\/\r","\/var\/www\/isp-50-from-bill\/"],"cloud_enabled":true,"cloud_provider_id":2}
+    [backup_type] => files
+    [where_param_0] => 5
+)
+
+[2025-10-25 14:57:49] Rows affected: 1
+[2025-10-25 14:57:49] DB update executed
+[2025-10-25 14:57:49] Update completed
+[2025-10-25 14:57:58] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 14:57:58] POST data: Array
+(
+    [action] => update
+    [config_id] => 10
+    [name] => ISP-Billing-DB
+    [backup_type] => mysql
+    [files] => 
+    [mysql_host] => localhost
+    [mysql_username] => admin
+    [mysql_password] => adminkaka
+    [mysql_databases] => ISP-DEMO-5049
+ISP-NAB-5053
+ISP-Shakeel-5051
+ISP-Super-5052
+ISP-Taimoor-5054
+isp_billing
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:58] Config data built: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:58] BACKUPMANAGER - updateConfig called
+[2025-10-25 14:57:58] Input data: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:58] Before encryption: Array
+(
+    [host] => localhost
+    [username] => admin
+    [password] => adminkaka
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:58] After encryption: Array
+(
+    [host] => localhost
+    [username] => BIqwcKw4WFrnmROfcpg6nHNiTVIyRmlrcVd0L0hIenpkTE54V2c9PQ==
+    [password] => us6bAsJ2WvsE0VAcmLRWAWczSFE0eXl4SWxJNzkraFN1Q3FYMkE9PQ==
+    [databases] => Array
+        (
+            [0] => ISP-DEMO-5049
+            [1] => ISP-NAB-5053
+            [2] => ISP-Shakeel-5051
+            [3] => ISP-Super-5052
+            [4] => ISP-Taimoor-5054
+            [5] => isp_billing
+        )
+
+    [cloud_enabled] => 1
+    [cloud_provider_id] => 2
+)
+
+[2025-10-25 14:57:58] Update data to DB: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"BIqwcKw4WFrnmROfcpg6nHNiTVIyRmlrcVd0L0hIenpkTE54V2c9PQ==","password":"us6bAsJ2WvsE0VAcmLRWAWczSFE0eXl4SWxJNzkraFN1Q3FYMkE9PQ==","databases":["ISP-DEMO-5049","ISP-NAB-5053","ISP-Shakeel-5051","ISP-Super-5052","ISP-Taimoor-5054","isp_billing"],"cloud_enabled":true,"cloud_provider_id":2}
+    [backup_type] => mysql
+)
+
+[2025-10-25 14:57:58] DATABASE - update() called
+[2025-10-25 14:57:58] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 14:57:58] Params: Array
+(
+    [name] => ISP-Billing-DB
+    [config_data] => {"host":"localhost","username":"BIqwcKw4WFrnmROfcpg6nHNiTVIyRmlrcVd0L0hIenpkTE54V2c9PQ==","password":"us6bAsJ2WvsE0VAcmLRWAWczSFE0eXl4SWxJNzkraFN1Q3FYMkE9PQ==","databases":["ISP-DEMO-5049","ISP-NAB-5053","ISP-Shakeel-5051","ISP-Super-5052","ISP-Taimoor-5054","isp_billing"],"cloud_enabled":true,"cloud_provider_id":2}
+    [backup_type] => mysql
+    [where_param_0] => 10
+)
+
+[2025-10-25 14:57:58] Rows affected: 1
+[2025-10-25 14:57:58] DB update executed
+[2025-10-25 14:57:58] Update completed
+[2025-10-25 14:58:08] DATABASE - update() called
+[2025-10-25 14:58:08] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:08] Params: Array
+(
+    [progress] => 10
+    [current_step] => Testing MySQL connection...
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:08] Rows affected: 1
+[2025-10-25 14:58:08] DATABASE - update() called
+[2025-10-25 14:58:08] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:08] Params: Array
+(
+    [progress] => 20
+    [current_step] => Connection successful. Starting database backups...
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:08] Rows affected: 1
+[2025-10-25 14:58:08] DATABASE - update() called
+[2025-10-25 14:58:08] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:08] Params: Array
+(
+    [progress] => 31.666666666667
+    [current_step] => Backing up database: ISP-DEMO-5049
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:08] Rows affected: 1
+[2025-10-25 14:58:08] DATABASE - update() called
+[2025-10-25 14:58:08] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:08] Params: Array
+(
+    [progress] => 43.333333333333
+    [current_step] => Backing up database: ISP-NAB-5053
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:08] Rows affected: 1
+[2025-10-25 14:58:08] DATABASE - update() called
+[2025-10-25 14:58:08] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:08] Params: Array
+(
+    [progress] => 55
+    [current_step] => Backing up database: ISP-Shakeel-5051
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:08] Rows affected: 1
+[2025-10-25 14:58:08] DATABASE - update() called
+[2025-10-25 14:58:08] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:08] Params: Array
+(
+    [progress] => 66.666666666667
+    [current_step] => Backing up database: ISP-Super-5052
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:08] Rows affected: 1
+[2025-10-25 14:58:08] DATABASE - update() called
+[2025-10-25 14:58:08] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:08] Params: Array
+(
+    [progress] => 78.333333333333
+    [current_step] => Backing up database: ISP-Taimoor-5054
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:08] Rows affected: 1
+[2025-10-25 14:58:09] DATABASE - update() called
+[2025-10-25 14:58:09] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:09] Params: Array
+(
+    [progress] => 90
+    [current_step] => Backing up database: isp_billing
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:09] Rows affected: 1
+[2025-10-25 14:58:09] DATABASE - update() called
+[2025-10-25 14:58:09] SQL: UPDATE backup_history SET progress = :progress, current_step = :current_step WHERE id = :where_param_0
+[2025-10-25 14:58:09] Params: Array
+(
+    [progress] => 100
+    [current_step] => MySQL backup completed successfully
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:09] Rows affected: 1
+[2025-10-25 14:58:09] DATABASE - update() called
+[2025-10-25 14:58:09] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 14:58:09] Params: Array
+(
+    [end_time] => 2025-10-25 14:58:09
+    [status] => completed
+    [size_bytes] => 442939
+    [file_count] => 6
+    [where_param_0] => 85
+)
+
+[2025-10-25 14:58:09] Rows affected: 1
+[2025-10-25 14:58:28] DATABASE - update() called
+[2025-10-25 14:58:28] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 14:58:28] Params: Array
+(
+    [end_time] => 2025-10-25 14:58:28
+    [status] => completed
+    [size_bytes] => 27216230
+    [file_count] => 3
+    [where_param_0] => 86
+)
+
+[2025-10-25 14:58:28] Rows affected: 1

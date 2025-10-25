@@ -72,6 +72,10 @@ function handleCreateConfig() {
             break;
     }
     
+    // Add cloud storage settings
+    $configData['cloud_enabled'] = isset($_POST['cloud_enabled']) ? (bool)$_POST['cloud_enabled'] : false;
+    $configData['cloud_provider_id'] = !empty($_POST['cloud_provider_id']) ? (int)$_POST['cloud_provider_id'] : null;
+    
     $backupManager->createConfig($name, $backupType, $configData, $user['id']);
     header('Location: configurations.php?success=created');
     exit;
@@ -114,6 +118,10 @@ function handleUpdateConfig() {
             ];
             break;
     }
+    
+    // Add cloud storage settings
+    $configData['cloud_enabled'] = isset($_POST['cloud_enabled']) ? (bool)$_POST['cloud_enabled'] : false;
+    $configData['cloud_provider_id'] = !empty($_POST['cloud_provider_id']) ? (int)$_POST['cloud_provider_id'] : null;
     
     file_put_contents($logFile, date('[Y-m-d H:i:s] ') . "Config data built: " . print_r($configData, true) . "\n", FILE_APPEND);
     
@@ -250,6 +258,16 @@ $successMessages = [
                             <i class="bi bi-folder me-1"></i>Path Settings
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_ip.php">
+                            <i class="bi bi-shield-lock me-1"></i>IP Whitelist
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_cloud.php">
+                            <i class="bi bi-cloud me-1"></i>Cloud Storage
+                        </a>
+                    </li>
                 </ul>
                 
                 <ul class="navbar-nav">
@@ -274,7 +292,7 @@ $successMessages = [
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fluid mt-4">
+    <div id="configurations-container" class="container-fluid mt-4">
         <!-- Page Header -->
         <div class="row mb-4">
             <div class="col">
@@ -560,6 +578,40 @@ $successMessages = [
                                 <input type="hidden" id="postgres_databases" name="postgres_databases" value="">
                             </div>
                         </div>
+                        
+                        <!-- Cloud Storage Settings -->
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h6 class="border-bottom pb-2">
+                                    <i class="bi bi-cloud me-2"></i>Cloud Storage Settings
+                                </h6>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="cloud_enabled" name="cloud_enabled" value="1">
+                                    <label class="form-check-label" for="cloud_enabled">
+                                        Enable Cloud Upload
+                                    </label>
+                                </div>
+                                <div class="form-text">Automatically upload backups to cloud storage after completion</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cloud_provider_id" class="form-label">Cloud Provider</label>
+                                <select class="form-select" id="cloud_provider_id" name="cloud_provider_id">
+                                    <option value="">Select Cloud Provider</option>
+                                    <?php
+                                    $cloudProviders = $db->fetchAll("SELECT * FROM cloud_providers WHERE enabled = 1 ORDER BY name");
+                                    foreach ($cloudProviders as $provider) {
+                                        echo '<option value="' . $provider['id'] . '">' . htmlspecialchars($provider['name']) . ' (' . ucfirst($provider['type']) . ')</option>';
+                                    }
+                                    ?>
+                                </select>
+                                <div class="form-text">Choose which cloud provider to use for uploads</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -573,6 +625,8 @@ $successMessages = [
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/filters.js"></script>
     <script src="assets/js/app.js"></script>
     <script>
         function toggleConfigFields() {
@@ -1199,6 +1253,18 @@ $successMessages = [
             console.log('Progress modal hidden - ensuring polling is stopped');
             stopProgressPolling();
             currentHistoryId = null;
+        });
+        
+        // Initialize filter manager for configurations
+        document.addEventListener('DOMContentLoaded', function() {
+            const configContainer = document.querySelector('.container-fluid');
+            if (configContainer) {
+                new FilterManager('configurations-container', {
+                    searchFields: ['name', 'type'],
+                    filterFields: ['type', 'status'],
+                    sortFields: ['name', 'type', 'date']
+                });
+            }
         });
     </script>
 </body>

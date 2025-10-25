@@ -134,6 +134,16 @@ $pathArray = array_map('trim', explode(',', $allowedPaths));
                             <i class="bi bi-folder me-1"></i>Path Settings
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_ip.php">
+                            <i class="bi bi-shield-lock me-1"></i>IP Whitelist
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_cloud.php">
+                            <i class="bi bi-cloud me-1"></i>Cloud Storage
+                        </a>
+                    </li>
                 </ul>
                 
                 <ul class="navbar-nav">

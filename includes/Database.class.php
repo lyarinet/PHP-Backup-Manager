@@ -153,9 +153,47 @@ class Database {
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id INTEGER,
                 action VARCHAR(100) NOT NULL,
+                ip_address VARCHAR(45),
+                user_agent TEXT,
                 details TEXT,
-                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+            )',
+            
+            'CREATE TABLE IF NOT EXISTS cloud_providers (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name VARCHAR(100) NOT NULL,
+                type VARCHAR(20) NOT NULL,
+                host VARCHAR(255),
+                port INTEGER,
+                username VARCHAR(100),
+                password TEXT,
+                ssl BOOLEAN DEFAULT 0,
+                passive BOOLEAN DEFAULT 1,
+                remote_path VARCHAR(500),
+                endpoint VARCHAR(255),
+                region VARCHAR(50),
+                bucket VARCHAR(100),
+                access_key VARCHAR(255),
+                secret_key TEXT,
+                storage_class VARCHAR(50),
+                enabled BOOLEAN DEFAULT 1,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            )',
+            
+            'CREATE TABLE IF NOT EXISTS cloud_uploads (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                history_id INTEGER NOT NULL,
+                provider_id INTEGER NOT NULL,
+                remote_path VARCHAR(500) NOT NULL,
+                upload_status VARCHAR(20) DEFAULT "pending",
+                upload_start DATETIME,
+                upload_end DATETIME,
+                error_message TEXT,
+                file_size INTEGER DEFAULT 0,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (history_id) REFERENCES backup_history(id) ON DELETE CASCADE,
+                FOREIGN KEY (provider_id) REFERENCES cloud_providers(id) ON DELETE CASCADE
             )'
         ];
         
