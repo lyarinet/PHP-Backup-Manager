@@ -1,17 +1,7 @@
-[2025-10-25 10:05:06] [INFO] Backing up MySQL database: iptvmonitor
-[2025-10-25 10:05:07] [INFO] Successfully backed up MySQL: iptvmonitor
-[2025-10-25 10:05:07] [INFO] MySQL backup completed: 1 successful, 0 failed
-[2025-10-25 10:07:11] [INFO] Backing up MySQL database: iptvmonitor
-[2025-10-25 10:07:12] [INFO] Successfully backed up MySQL: iptvmonitor
-[2025-10-25 10:07:12] [INFO] MySQL backup completed: 1 successful, 0 failed
-[2025-10-25 10:17:06] [INFO] Backing up MySQL database: iptvmonitor
-[2025-10-25 10:17:07] [INFO] Successfully backed up MySQL: iptvmonitor
-[2025-10-25 10:17:07] [INFO] MySQL backup completed: 1 successful, 0 failed
-[2025-10-25 10:19:19] [INFO] Backing up MySQL database: iptvmonitor
-[2025-10-25 10:19:20] [INFO] Successfully backed up MySQL: iptvmonitor
-[2025-10-25 10:19:20] [INFO] MySQL backup completed: 1 successful, 0 failed
-[2025-10-25 10:19:29] [INFO] Backing up MySQL database: iptvmonitor
-[2025-10-25 10:19:31] [INFO] Successfully backed up MySQL: iptvmonitor
-[2025-10-25 10:19:31] [INFO] MySQL backup completed: 1 successful, 0 failed
-[2025-10-25 10:19:37] [INFO] WARNING: Path does not exist: /var/www/html
-[2025-10-25 10:19:37] [INFO] File backup completed: 0 successful, 1 failed
+[2025-10-25 12:59:41] [INFO] Backing up: /var/big/test1
+[2025-10-25 12:59:41] [INFO] Successfully backed up: /var/big/test1 -> /opt/backups/2025-10-25_12-59-41/files/test1_2025-10-25_12-59-41.tar.gz
+[2025-10-25 12:59:41] [INFO] Backing up: /var/big/test2
+[2025-10-25 12:59:41] [INFO] Successfully backed up: /var/big/test2 -> /opt/backups/2025-10-25_12-59-41/files/test2_2025-10-25_12-59-41.tar.gz
+[2025-10-25 12:59:41] [INFO] Backing up: /var/big/test3
+[2025-10-25 12:59:41] [INFO] Successfully backed up: /var/big/test3 -> /opt/backups/2025-10-25_12-59-41/files/test3_2025-10-25_12-59-41.tar.gz
+[2025-10-25 12:59:41] [INFO] File backup completed: 3 successful, 0 failed

@@ -118,6 +118,9 @@ class BackupManager {
         $failCount = 0;
         
         foreach ($filesToBackup as $filePath) {
+            // Trim whitespace and control characters
+            $filePath = trim($filePath);
+            
             if (!file_exists($filePath)) {
                 $this->log("WARNING: Path does not exist: {$filePath}");
                 $failCount++;

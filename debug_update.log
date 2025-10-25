@@ -85,3 +85,1068 @@
 [2025-10-25 10:36:13] Rows affected: 1
 [2025-10-25 10:36:13] DB update executed
 [2025-10-25 10:36:13] Update completed
+[2025-10-25 11:40:22] DATABASE - update() called
+[2025-10-25 11:40:22] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:40:22] Params: Array
+(
+    [end_time] => 2025-10-25 11:40:22
+    [status] => completed
+    [size_bytes] => 1174116
+    [file_count] => 1
+    [where_param_0] => 42
+)
+
+[2025-10-25 11:40:22] Rows affected: 1
+[2025-10-25 11:41:43] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 11:41:43] POST data: Array
+(
+    [action] => update
+    [config_id] => 4
+    [name] => ISP billing files
+    [backup_type] => files
+    [files] => /var/www/instances/
+/var/www/isp-50-from-bill/
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 11:41:43] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:41:43] BACKUPMANAGER - updateConfig called
+[2025-10-25 11:41:43] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:41:43] Before encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:41:43] After encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:41:43] Update data to DB: Array
+(
+    [name] => ISP billing files
+    [config_data] => {"files":["\/var\/www\/instances\/\r","\/var\/www\/isp-50-from-bill\/"]}
+    [backup_type] => files
+)
+
+[2025-10-25 11:41:43] DATABASE - update() called
+[2025-10-25 11:41:43] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 11:41:43] Params: Array
+(
+    [name] => ISP billing files
+    [config_data] => {"files":["\/var\/www\/instances\/\r","\/var\/www\/isp-50-from-bill\/"]}
+    [backup_type] => files
+    [where_param_0] => 4
+)
+
+[2025-10-25 11:41:43] Rows affected: 1
+[2025-10-25 11:41:43] DB update executed
+[2025-10-25 11:41:43] Update completed
+[2025-10-25 11:41:46] DATABASE - update() called
+[2025-10-25 11:41:46] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:41:46] Params: Array
+(
+    [end_time] => 2025-10-25 11:41:46
+    [status] => completed
+    [size_bytes] => 1174116
+    [file_count] => 1
+    [where_param_0] => 43
+)
+
+[2025-10-25 11:41:46] Rows affected: 1
+[2025-10-25 11:42:12] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 11:42:12] POST data: Array
+(
+    [action] => update
+    [config_id] => 4
+    [name] => ISP billing files
+    [backup_type] => files
+    [files] => /var/www/instances/ /var/www/isp-50-from-bill/
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 11:42:12] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/ /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:42:12] BACKUPMANAGER - updateConfig called
+[2025-10-25 11:42:12] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/ /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:42:12] Before encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/ /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:42:12] After encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/ /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:42:12] Update data to DB: Array
+(
+    [name] => ISP billing files
+    [config_data] => {"files":["\/var\/www\/instances\/ \/var\/www\/isp-50-from-bill\/"]}
+    [backup_type] => files
+)
+
+[2025-10-25 11:42:12] DATABASE - update() called
+[2025-10-25 11:42:12] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 11:42:12] Params: Array
+(
+    [name] => ISP billing files
+    [config_data] => {"files":["\/var\/www\/instances\/ \/var\/www\/isp-50-from-bill\/"]}
+    [backup_type] => files
+    [where_param_0] => 4
+)
+
+[2025-10-25 11:42:12] Rows affected: 1
+[2025-10-25 11:42:12] DB update executed
+[2025-10-25 11:42:12] Update completed
+[2025-10-25 11:42:14] DATABASE - update() called
+[2025-10-25 11:42:14] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:42:14] Params: Array
+(
+    [end_time] => 2025-10-25 11:42:14
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 44
+)
+
+[2025-10-25 11:42:14] Rows affected: 1
+[2025-10-25 11:44:51] DATABASE - update() called
+[2025-10-25 11:44:51] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:44:51] Params: Array
+(
+    [end_time] => 2025-10-25 11:44:51
+    [status] => completed
+    [size_bytes] => 1174116
+    [file_count] => 1
+    [where_param_0] => 45
+)
+
+[2025-10-25 11:44:51] Rows affected: 1
+[2025-10-25 11:45:51] DATABASE - update() called
+[2025-10-25 11:45:51] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:45:51] Params: Array
+(
+    [end_time] => 2025-10-25 11:45:51
+    [status] => completed
+    [size_bytes] => 1174116
+    [file_count] => 1
+    [where_param_0] => 46
+)
+
+[2025-10-25 11:45:51] Rows affected: 1
+[2025-10-25 11:46:53] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 11:46:53] POST data: Array
+(
+    [action] => update
+    [config_id] => 4
+    [name] => ISP billing files
+    [backup_type] => files
+    [files] => /var/www/instances/
+/var/www/isp-50-from-bill/
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 11:46:53] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:46:53] BACKUPMANAGER - updateConfig called
+[2025-10-25 11:46:53] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:46:57] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 11:46:57] POST data: Array
+(
+    [action] => update
+    [config_id] => 4
+    [name] => ISP billing files
+    [backup_type] => files
+    [files] => /var/www/instances/
+/var/www/isp-50-from-bill/
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 11:46:57] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:46:57] BACKUPMANAGER - updateConfig called
+[2025-10-25 11:46:57] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:47:19] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 11:47:19] POST data: Array
+(
+    [action] => update
+    [config_id] => 5
+    [name] => ISP Billing Files - Multiple Locations
+    [backup_type] => files
+    [files] => /var/www/instances/
+/var/www/isp-50-from-bill/
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 11:47:19] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:47:19] BACKUPMANAGER - updateConfig called
+[2025-10-25 11:47:19] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:47:19] Before encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:47:19] After encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/www/instances/
+            [1] => /var/www/isp-50-from-bill/
+        )
+
+)
+
+[2025-10-25 11:47:19] Update data to DB: Array
+(
+    [name] => ISP Billing Files - Multiple Locations
+    [config_data] => {"files":["\/var\/www\/instances\/\r","\/var\/www\/isp-50-from-bill\/"]}
+    [backup_type] => files
+)
+
+[2025-10-25 11:47:19] DATABASE - update() called
+[2025-10-25 11:47:19] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 11:47:19] Params: Array
+(
+    [name] => ISP Billing Files - Multiple Locations
+    [config_data] => {"files":["\/var\/www\/instances\/\r","\/var\/www\/isp-50-from-bill\/"]}
+    [backup_type] => files
+    [where_param_0] => 5
+)
+
+[2025-10-25 11:47:19] Rows affected: 1
+[2025-10-25 11:47:19] DB update executed
+[2025-10-25 11:47:19] Update completed
+[2025-10-25 11:47:24] DATABASE - update() called
+[2025-10-25 11:47:24] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:47:24] Params: Array
+(
+    [end_time] => 2025-10-25 11:47:24
+    [status] => completed
+    [size_bytes] => 1174116
+    [file_count] => 1
+    [where_param_0] => 47
+)
+
+[2025-10-25 11:47:24] Rows affected: 1
+[2025-10-25 11:48:45] DATABASE - update() called
+[2025-10-25 11:48:45] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:48:45] Params: Array
+(
+    [end_time] => 2025-10-25 11:48:45
+    [status] => completed
+    [size_bytes] => 1174116
+    [file_count] => 1
+    [where_param_0] => 48
+)
+
+[2025-10-25 11:48:45] Rows affected: 1
+[2025-10-25 11:55:06] DATABASE - update() called
+[2025-10-25 11:55:06] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:55:06] Params: Array
+(
+    [end_time] => 2025-10-25 11:55:06
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 49
+)
+
+[2025-10-25 11:55:06] Rows affected: 1
+[2025-10-25 11:56:14] DATABASE - update() called
+[2025-10-25 11:56:14] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:56:14] Params: Array
+(
+    [end_time] => 2025-10-25 11:56:14
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 50
+)
+
+[2025-10-25 11:56:14] Rows affected: 1
+[2025-10-25 11:58:21] DATABASE - update() called
+[2025-10-25 11:58:21] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:58:21] Params: Array
+(
+    [end_time] => 2025-10-25 11:58:21
+    [status] => completed
+    [size_bytes] => 1174094
+    [file_count] => 1
+    [where_param_0] => 51
+)
+
+[2025-10-25 11:58:21] Rows affected: 1
+[2025-10-25 11:59:40] DATABASE - update() called
+[2025-10-25 11:59:40] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 11:59:40] Params: Array
+(
+    [end_time] => 2025-10-25 11:59:40
+    [status] => completed
+    [size_bytes] => 1174094
+    [file_count] => 1
+    [where_param_0] => 52
+)
+
+[2025-10-25 11:59:40] Rows affected: 1
+[2025-10-25 12:00:09] DATABASE - update() called
+[2025-10-25 12:00:09] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:00:09] Params: Array
+(
+    [end_time] => 2025-10-25 12:00:09
+    [status] => completed
+    [size_bytes] => 1174094
+    [file_count] => 1
+    [where_param_0] => 53
+)
+
+[2025-10-25 12:00:09] Rows affected: 1
+[2025-10-25 12:00:50] DATABASE - update() called
+[2025-10-25 12:00:50] SQL: UPDATE backup_configs SET config_data = :config_data WHERE id = :where_param_0
+[2025-10-25 12:00:50] Params: Array
+(
+    [config_data] => {"files":["\/var\/www\/instances\/","\/var\/www\/isp-50-from-bill\/"]}
+    [where_param_0] => 5
+)
+
+[2025-10-25 12:00:50] Rows affected: 1
+[2025-10-25 12:01:05] DATABASE - update() called
+[2025-10-25 12:01:05] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:01:05] Params: Array
+(
+    [end_time] => 2025-10-25 12:01:05
+    [status] => completed
+    [size_bytes] => 15207852
+    [file_count] => 2
+    [where_param_0] => 54
+)
+
+[2025-10-25 12:01:05] Rows affected: 1
+[2025-10-25 12:02:19] DATABASE - update() called
+[2025-10-25 12:02:19] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:02:19] Params: Array
+(
+    [end_time] => 2025-10-25 12:02:19
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 55
+)
+
+[2025-10-25 12:02:19] Rows affected: 1
+[2025-10-25 12:03:00] DATABASE - update() called
+[2025-10-25 12:03:00] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:03:00] Params: Array
+(
+    [end_time] => 2025-10-25 12:03:00
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 56
+)
+
+[2025-10-25 12:03:00] Rows affected: 1
+[2025-10-25 12:03:14] DATABASE - update() called
+[2025-10-25 12:03:14] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:03:14] Params: Array
+(
+    [end_time] => 2025-10-25 12:03:14
+    [status] => completed
+    [size_bytes] => 15207852
+    [file_count] => 2
+    [where_param_0] => 57
+)
+
+[2025-10-25 12:03:14] Rows affected: 1
+[2025-10-25 12:04:57] DATABASE - update() called
+[2025-10-25 12:04:57] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:04:57] Params: Array
+(
+    [end_time] => 2025-10-25 12:04:57
+    [status] => completed
+    [size_bytes] => 15207852
+    [file_count] => 2
+    [where_param_0] => 58
+)
+
+[2025-10-25 12:04:57] Rows affected: 1
+[2025-10-25 12:07:02] DATABASE - update() called
+[2025-10-25 12:07:02] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:07:02] Params: Array
+(
+    [end_time] => 2025-10-25 12:07:02
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 59
+)
+
+[2025-10-25 12:07:02] Rows affected: 1
+[2025-10-25 12:07:51] DATABASE - update() called
+[2025-10-25 12:07:51] SQL: UPDATE backup_configs SET config_data = :config_data WHERE name = :where_param_0
+[2025-10-25 12:07:51] Params: Array
+(
+    [config_data] => {"files":["\/var\/www\/html\/backup_package\/config.php","\/var\/www\/html\/backup_package\/index.php","\/var\/www\/html\/backup_package\/README.md"]}
+    [where_param_0] => test
+)
+
+[2025-10-25 12:07:51] Rows affected: 1
+[2025-10-25 12:07:53] DATABASE - update() called
+[2025-10-25 12:07:53] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:07:53] Params: Array
+(
+    [end_time] => 2025-10-25 12:07:53
+    [status] => completed
+    [size_bytes] => 7205
+    [file_count] => 3
+    [where_param_0] => 60
+)
+
+[2025-10-25 12:07:53] Rows affected: 1
+[2025-10-25 12:09:25] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 12:09:25] POST data: Array
+(
+    [action] => update
+    [config_id] => 6
+    [name] => test
+    [backup_type] => files
+    [files] => /home/ubuntu/test1
+/home/ubuntu/test2
+/home/ubuntu/test3
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 12:09:25] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /home/ubuntu/test1
+            [1] => /home/ubuntu/test2
+            [2] => /home/ubuntu/test3
+        )
+
+)
+
+[2025-10-25 12:09:25] BACKUPMANAGER - updateConfig called
+[2025-10-25 12:09:25] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /home/ubuntu/test1
+            [1] => /home/ubuntu/test2
+            [2] => /home/ubuntu/test3
+        )
+
+)
+
+[2025-10-25 12:09:25] Before encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /home/ubuntu/test1
+            [1] => /home/ubuntu/test2
+            [2] => /home/ubuntu/test3
+        )
+
+)
+
+[2025-10-25 12:09:25] After encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /home/ubuntu/test1
+            [1] => /home/ubuntu/test2
+            [2] => /home/ubuntu/test3
+        )
+
+)
+
+[2025-10-25 12:09:25] Update data to DB: Array
+(
+    [name] => test
+    [config_data] => {"files":["\/home\/ubuntu\/test1\r","\/home\/ubuntu\/test2\r","\/home\/ubuntu\/test3"]}
+    [backup_type] => files
+)
+
+[2025-10-25 12:09:25] DATABASE - update() called
+[2025-10-25 12:09:25] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 12:09:25] Params: Array
+(
+    [name] => test
+    [config_data] => {"files":["\/home\/ubuntu\/test1\r","\/home\/ubuntu\/test2\r","\/home\/ubuntu\/test3"]}
+    [backup_type] => files
+    [where_param_0] => 6
+)
+
+[2025-10-25 12:09:25] Rows affected: 1
+[2025-10-25 12:09:25] DB update executed
+[2025-10-25 12:09:25] Update completed
+[2025-10-25 12:09:45] DATABASE - update() called
+[2025-10-25 12:09:45] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:09:45] Params: Array
+(
+    [end_time] => 2025-10-25 12:09:45
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 61
+)
+
+[2025-10-25 12:09:45] Rows affected: 1
+[2025-10-25 12:10:16] DATABASE - update() called
+[2025-10-25 12:10:16] SQL: UPDATE backup_configs SET config_data = :config_data WHERE name = :where_param_0
+[2025-10-25 12:10:16] Params: Array
+(
+    [config_data] => {"files":["\/home\/ubuntu\/test1","\/home\/ubuntu\/test2","\/home\/ubuntu\/test3"]}
+    [where_param_0] => test
+)
+
+[2025-10-25 12:10:16] Rows affected: 1
+[2025-10-25 12:10:18] DATABASE - update() called
+[2025-10-25 12:10:18] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:10:18] Params: Array
+(
+    [end_time] => 2025-10-25 12:10:18
+    [status] => completed
+    [size_bytes] => 3508
+    [file_count] => 3
+    [where_param_0] => 62
+)
+
+[2025-10-25 12:10:18] Rows affected: 1
+[2025-10-25 12:13:14] DATABASE - update() called
+[2025-10-25 12:13:14] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:13:14] Params: Array
+(
+    [end_time] => 2025-10-25 12:13:14
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 63
+)
+
+[2025-10-25 12:13:14] Rows affected: 1
+[2025-10-25 12:24:33] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 12:24:33] POST data: Array
+(
+    [action] => update
+    [config_id] => 7
+    [name] => testdemo
+    [backup_type] => files
+    [files] => /home/ubuntu/test1
+/home/ubuntu/test2
+/home/ubuntu/test3
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 12:24:33] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /home/ubuntu/test1
+            [1] => /home/ubuntu/test2
+            [2] => /home/ubuntu/test3
+        )
+
+)
+
+[2025-10-25 12:24:33] BACKUPMANAGER - updateConfig called
+[2025-10-25 12:24:33] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /home/ubuntu/test1
+            [1] => /home/ubuntu/test2
+            [2] => /home/ubuntu/test3
+        )
+
+)
+
+[2025-10-25 12:24:33] Before encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /home/ubuntu/test1
+            [1] => /home/ubuntu/test2
+            [2] => /home/ubuntu/test3
+        )
+
+)
+
+[2025-10-25 12:24:33] After encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /home/ubuntu/test1
+            [1] => /home/ubuntu/test2
+            [2] => /home/ubuntu/test3
+        )
+
+)
+
+[2025-10-25 12:24:33] Update data to DB: Array
+(
+    [name] => testdemo
+    [config_data] => {"files":["\/home\/ubuntu\/test1\r","\/home\/ubuntu\/test2\r","\/home\/ubuntu\/test3"]}
+    [backup_type] => files
+)
+
+[2025-10-25 12:24:33] DATABASE - update() called
+[2025-10-25 12:24:33] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 12:24:33] Params: Array
+(
+    [name] => testdemo
+    [config_data] => {"files":["\/home\/ubuntu\/test1\r","\/home\/ubuntu\/test2\r","\/home\/ubuntu\/test3"]}
+    [backup_type] => files
+    [where_param_0] => 7
+)
+
+[2025-10-25 12:24:33] Rows affected: 1
+[2025-10-25 12:24:33] DB update executed
+[2025-10-25 12:24:33] Update completed
+[2025-10-25 12:24:36] DATABASE - update() called
+[2025-10-25 12:24:36] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:24:36] Params: Array
+(
+    [end_time] => 2025-10-25 12:24:36
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 64
+)
+
+[2025-10-25 12:24:36] Rows affected: 1
+[2025-10-25 12:27:41] DATABASE - update() called
+[2025-10-25 12:27:41] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:27:41] Params: Array
+(
+    [end_time] => 2025-10-25 12:27:41
+    [status] => completed
+    [size_bytes] => 3753
+    [file_count] => 3
+    [where_param_0] => 65
+)
+
+[2025-10-25 12:27:41] Rows affected: 1
+[2025-10-25 12:29:35] DATABASE - update() called
+[2025-10-25 12:29:35] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:29:35] Params: Array
+(
+    [end_time] => 2025-10-25 12:29:35
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 66
+)
+
+[2025-10-25 12:29:35] Rows affected: 1
+[2025-10-25 12:31:37] DATABASE - update() called
+[2025-10-25 12:31:37] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:31:37] Params: Array
+(
+    [end_time] => 2025-10-25 12:31:37
+    [status] => completed
+    [size_bytes] => 3753
+    [file_count] => 3
+    [where_param_0] => 67
+)
+
+[2025-10-25 12:31:37] Rows affected: 1
+[2025-10-25 12:33:58] DATABASE - update() called
+[2025-10-25 12:33:58] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:33:58] Params: Array
+(
+    [end_time] => 2025-10-25 12:33:58
+    [status] => completed
+    [size_bytes] => 3753
+    [file_count] => 3
+    [where_param_0] => 68
+)
+
+[2025-10-25 12:33:58] Rows affected: 1
+[2025-10-25 12:34:48] DATABASE - update() called
+[2025-10-25 12:34:48] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:34:48] Params: Array
+(
+    [end_time] => 2025-10-25 12:34:48
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 69
+)
+
+[2025-10-25 12:34:48] Rows affected: 1
+[2025-10-25 12:35:32] DATABASE - update() called
+[2025-10-25 12:35:32] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:35:32] Params: Array
+(
+    [end_time] => 2025-10-25 12:35:32
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 70
+)
+
+[2025-10-25 12:35:32] Rows affected: 1
+[2025-10-25 12:36:55] DATABASE - update() called
+[2025-10-25 12:36:55] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:36:55] Params: Array
+(
+    [end_time] => 2025-10-25 12:36:55
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 71
+)
+
+[2025-10-25 12:36:55] Rows affected: 1
+[2025-10-25 12:39:01] DATABASE - update() called
+[2025-10-25 12:39:01] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:39:01] Params: Array
+(
+    [end_time] => 2025-10-25 12:39:01
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 72
+)
+
+[2025-10-25 12:39:01] Rows affected: 1
+[2025-10-25 12:42:44] DATABASE - update() called
+[2025-10-25 12:42:44] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:42:44] Params: Array
+(
+    [end_time] => 2025-10-25 12:42:44
+    [status] => completed
+    [size_bytes] => 3779
+    [file_count] => 3
+    [where_param_0] => 73
+)
+
+[2025-10-25 12:42:44] Rows affected: 1
+[2025-10-25 12:43:43] DATABASE - update() called
+[2025-10-25 12:43:43] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:43:43] Params: Array
+(
+    [end_time] => 2025-10-25 12:43:43
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 74
+)
+
+[2025-10-25 12:43:43] Rows affected: 1
+[2025-10-25 12:45:18] DATABASE - update() called
+[2025-10-25 12:45:18] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:45:18] Params: Array
+(
+    [end_time] => 2025-10-25 12:45:18
+    [status] => completed
+    [size_bytes] => 3779
+    [file_count] => 3
+    [where_param_0] => 75
+)
+
+[2025-10-25 12:45:18] Rows affected: 1
+[2025-10-25 12:46:56] DATABASE - update() called
+[2025-10-25 12:46:56] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:46:56] Params: Array
+(
+    [end_time] => 2025-10-25 12:46:56
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 76
+)
+
+[2025-10-25 12:46:56] Rows affected: 1
+[2025-10-25 12:49:48] CONFIGS.PHP - UPDATE CALLED
+[2025-10-25 12:49:48] POST data: Array
+(
+    [action] => update
+    [config_id] => 7
+    [name] => testdemo
+    [backup_type] => files
+    [files] => /var/big/test1
+/var/big/test2
+/var/big/test3
+    [mysql_host] => localhost
+    [mysql_username] => 
+    [mysql_password] => 
+    [mysql_databases] => 
+    [postgres_host] => localhost
+    [postgres_username] => 
+    [postgres_password] => 
+    [postgres_databases] => 
+)
+
+[2025-10-25 12:49:48] Config data built: Array
+(
+    [files] => Array
+        (
+            [0] => /var/big/test1
+            [1] => /var/big/test2
+            [2] => /var/big/test3
+        )
+
+)
+
+[2025-10-25 12:49:48] BACKUPMANAGER - updateConfig called
+[2025-10-25 12:49:48] Input data: Array
+(
+    [files] => Array
+        (
+            [0] => /var/big/test1
+            [1] => /var/big/test2
+            [2] => /var/big/test3
+        )
+
+)
+
+[2025-10-25 12:49:48] Before encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/big/test1
+            [1] => /var/big/test2
+            [2] => /var/big/test3
+        )
+
+)
+
+[2025-10-25 12:49:48] After encryption: Array
+(
+    [files] => Array
+        (
+            [0] => /var/big/test1
+            [1] => /var/big/test2
+            [2] => /var/big/test3
+        )
+
+)
+
+[2025-10-25 12:49:48] Update data to DB: Array
+(
+    [name] => testdemo
+    [config_data] => {"files":["\/var\/big\/test1\r","\/var\/big\/test2\r","\/var\/big\/test3"]}
+    [backup_type] => files
+)
+
+[2025-10-25 12:49:48] DATABASE - update() called
+[2025-10-25 12:49:48] SQL: UPDATE backup_configs SET name = :name, config_data = :config_data, backup_type = :backup_type WHERE id = :where_param_0
+[2025-10-25 12:49:48] Params: Array
+(
+    [name] => testdemo
+    [config_data] => {"files":["\/var\/big\/test1\r","\/var\/big\/test2\r","\/var\/big\/test3"]}
+    [backup_type] => files
+    [where_param_0] => 7
+)
+
+[2025-10-25 12:49:48] Rows affected: 1
+[2025-10-25 12:49:48] DB update executed
+[2025-10-25 12:49:48] Update completed
+[2025-10-25 12:49:56] DATABASE - update() called
+[2025-10-25 12:49:56] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:49:56] Params: Array
+(
+    [end_time] => 2025-10-25 12:49:56
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 77
+)
+
+[2025-10-25 12:49:56] Rows affected: 1
+[2025-10-25 12:54:24] DATABASE - update() called
+[2025-10-25 12:54:24] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:54:24] Params: Array
+(
+    [end_time] => 2025-10-25 12:54:24
+    [status] => completed
+    [size_bytes] => 0
+    [file_count] => 0
+    [where_param_0] => 78
+)
+
+[2025-10-25 12:54:24] Rows affected: 1
+[2025-10-25 12:56:22] DATABASE - update() called
+[2025-10-25 12:56:22] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:56:22] Params: Array
+(
+    [end_time] => 2025-10-25 12:56:22
+    [status] => completed
+    [size_bytes] => 3766
+    [file_count] => 3
+    [where_param_0] => 79
+)
+
+[2025-10-25 12:56:22] Rows affected: 1
+[2025-10-25 12:59:41] DATABASE - update() called
+[2025-10-25 12:59:41] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-25 12:59:41] Params: Array
+(
+    [end_time] => 2025-10-25 12:59:41
+    [status] => completed
+    [size_bytes] => 3766
+    [file_count] => 3
+    [where_param_0] => 80
+)
+
+[2025-10-25 12:59:41] Rows affected: 1

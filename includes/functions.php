@@ -79,16 +79,31 @@ function decryptData($encryptedData) {
  * Check if path is safe (no directory traversal)
  */
 function isPathSafe($path) {
-    $realPath = realpath($path);
-    $allowedPaths = [
-        realpath(BACKUP_DIR),
-        realpath('/var/www'),
-        realpath('/home'),
-        realpath('/opt')
-    ];
+    global $db;
     
+    // Get allowed paths from database settings
+    $allowedPathsSetting = $db ? $db->getSetting('allowed_backup_paths', '/var/www,/home,/opt') : '/var/www,/home,/opt';
+    $allowedPaths = array_map('trim', explode(',', $allowedPathsSetting));
+    
+    // Add backup directory to allowed paths
+    $allowedPaths[] = realpath(BACKUP_DIR);
+    
+    // Convert to real paths
+    $realAllowedPaths = [];
     foreach ($allowedPaths as $allowed) {
-        if ($allowed && strpos($realPath, $allowed) === 0) {
+        $realPath = realpath($allowed);
+        if ($realPath) {
+            $realAllowedPaths[] = $realPath;
+        }
+    }
+    
+    $realPath = realpath($path);
+    if (!$realPath) {
+        return false;
+    }
+    
+    foreach ($realAllowedPaths as $allowed) {
+        if (strpos($realPath, $allowed) === 0) {
             return true;
         }
     }

@@ -70,6 +70,11 @@ $backupDirSize = getDirectorySize($db->getSetting('backup_directory', BACKUP_DIR
                             <i class="bi bi-sliders me-1"></i>Settings
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_paths.php">
+                            <i class="bi bi-folder me-1"></i>Path Settings
+                        </a>
+                    </li>
                 </ul>
                 
                 <ul class="navbar-nav">

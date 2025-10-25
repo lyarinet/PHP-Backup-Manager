@@ -5,7 +5,7 @@
  */
 
 define('BACKUP_MANAGER', true);
-require_once '../config.php';
+require_once dirname(__DIR__) . '/config.php';
 
 $db = new Database();
 $auth = new Auth($db);

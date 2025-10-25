@@ -33,6 +33,7 @@ A comprehensive web-based backup management system with SQLite database, user au
 - ✅ **Multiple Backup Profiles**: Support for unlimited configurations
 - ✅ **Encrypted Credential Storage**: Secure storage of database passwords
 - ✅ **Enable/Disable**: Individual configuration management
+- ✅ **Path Security Management**: Global settings for allowed backup paths
 
 ### 🎯 Advanced Features
 - ✅ **Progress Bar System**: Real-time backup progress with polling
@@ -41,6 +42,8 @@ A comprehensive web-based backup management system with SQLite database, user au
 - ✅ **SSL/TLS Support**: Handles MySQL and PostgreSQL SSL connections
 - ✅ **Error Recovery**: Comprehensive error handling and user feedback
 - ✅ **Session Management**: Proper session handling for web and API calls
+- ✅ **Global Path Management**: Web interface for managing allowed backup paths
+- ✅ **Security Controls**: Configurable path restrictions with audit logging
 
 ## 🚀 Quick Start
 
@@ -69,6 +72,12 @@ A comprehensive web-based backup management system with SQLite database, user au
    - Select backup type (Files, MySQL, or PostgreSQL)
    - Use Quick Setup for common configurations
    - Click "Run Backup" to test
+
+4. **Configure path security (if needed)**
+   - Navigate to Settings → Path Settings
+   - Add allowed backup paths for your system
+   - Use Quick Actions for common paths
+   - Verify paths are working with test backups
 
 ### 🔧 Production Setup
 
@@ -99,6 +108,7 @@ A comprehensive web-based backup management system with SQLite database, user au
 ├── ⚙️ configurations.php       # Configuration management interface
 ├── 📋 history.php             # Backup history viewer
 ├── 🔧 settings.php            # System settings and user management
+├── 📁 settings_paths.php      # Path security management interface
 ├── 🚪 logout.php              # Logout handler
 ├── 🔄 migrate.php             # Database migration script
 ├── ⏰ cron.php                # Scheduled task executor
@@ -124,6 +134,16 @@ A comprehensive web-based backup management system with SQLite database, user au
 └── 📖 README.md              # This documentation
 ```
 
+## 🧭 Navigation Structure
+
+The application features a consistent navigation menu across all pages:
+
+- **🏠 Dashboard** - Main overview with statistics and recent backups
+- **⚙️ Configurations** - Manage backup configurations (Files, MySQL, PostgreSQL)
+- **📋 History** - View backup history and download files
+- **🔧 Settings** - System settings and user management
+- **📁 Path Settings** - Manage allowed backup paths for security
+
 ## ⚙️ Configuration
 
 ### 🗄️ Database Settings
@@ -141,6 +161,8 @@ A comprehensive web-based backup management system with SQLite database, user au
 - **Session Security**: HTTP-only cookies, secure flags
 - **File Permissions**: 600 for database, 755 for directories
 - **HTTPS**: Required for production environments
+- **Path Security**: Configurable allowed backup paths with web interface
+- **Audit Logging**: All path changes and security events logged
 
 ### 🌐 Network Configuration
 - **MySQL/PostgreSQL**: Supports SSL/TLS connections
@@ -170,6 +192,14 @@ A comprehensive web-based backup management system with SQLite database, user au
 - `POST /api/discover.php` - Discover MySQL/PostgreSQL databases
 - Automatic database detection with SSL support
 - Timeout protection and error handling
+
+### 🔒 Path Security Management
+- **Web Interface**: Navigate to Settings → Path Settings
+- **Add Paths**: Individual path addition with validation
+- **Bulk Update**: Comma-separated path management
+- **Quick Actions**: Common paths (Web Root, Home, Opt, Big Data)
+- **Audit Logging**: All path changes tracked in activity logs
+- **Real-time Validation**: Immediate path safety checking
 
 ## Cron Job Setup
 
@@ -258,6 +288,12 @@ chmod 755 /var/www/html/backup_package
    - **Fix**: Ensure session cookies are being sent
    - **Verify**: API endpoints are returning valid JSON
 
+6. **🔒 Path Security Issues**
+   - **Problem**: "Unsafe path" errors during backup
+   - **Solution**: Use Path Settings interface to add allowed paths
+   - **Fix**: Navigate to Settings → Path Settings → Add New Path
+   - **Verify**: Check allowed paths in database settings
+
 ### 📝 Log Files
 - **Application logs**: `/var/www/html/backup_package/logs/backup_manager.log`
 - **Web server logs**: Check Apache/Nginx error logs
@@ -281,6 +317,8 @@ chmod 755 /var/www/html/backup_package
 - **Real-time Updates**: AJAX polling for backup progress
 - **Modal-based UI**: Modern Bootstrap 5 interface
 - **Quick Setup**: Auto-select checkboxes for common configurations
+- **Path Security Management**: Web interface for managing allowed backup paths
+- **Global Settings**: Database-driven configuration for security controls
 
 ### ✅ **Database Schema**
 The application uses the following main tables:
@@ -311,4 +349,20 @@ For issues and questions:
 
 ---
 
-**🎉 This is a fully functional, production-ready backup management system!**
+## 🆕 Recent Updates
+
+### ✅ **Path Security Management (Latest)**
+- **Global Path Settings**: Web interface for managing allowed backup paths
+- **Database-Driven Configuration**: No code changes needed to add new paths
+- **Quick Action Buttons**: Common paths (Web Root, Home, Opt, Big Data)
+- **Audit Logging**: All path changes tracked in activity logs
+- **Real-time Validation**: Immediate path safety checking
+- **Bulk Operations**: Add/remove multiple paths efficiently
+
+### ✅ **Enhanced Security**
+- **Configurable Path Restrictions**: Prevent unauthorized directory access
+- **Web-based Management**: Easy path administration without file editing
+- **Activity Tracking**: Complete audit trail for security changes
+- **Validation System**: Real-time path safety verification
+
+**🎉 This is a fully functional, production-ready backup management system with advanced security controls!**

@@ -245,6 +245,11 @@ $successMessages = [
                             <i class="bi bi-sliders me-1"></i>Settings
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings_paths.php">
+                            <i class="bi bi-folder me-1"></i>Path Settings
+                        </a>
+                    </li>
                 </ul>
                 
                 <ul class="navbar-nav">
@@ -282,9 +287,9 @@ $successMessages = [
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createConfigModal" onclick="resetModalForNewConfig()">
                     <i class="bi bi-plus-circle me-2"></i>New Configuration
                 </button>
-                <button class="btn btn-warning btn-sm ms-2" onclick="showProgressModal(15, 'Test Configuration')">
+                <!-- <button class="btn btn-warning btn-sm ms-2" onclick="showProgressModal(15, 'Test Configuration')">
                     <i class="bi bi-hourglass-split me-2"></i>Test Progress
-                </button>
+                </button> -->
             </div>
         </div>
 

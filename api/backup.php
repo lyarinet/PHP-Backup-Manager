@@ -12,7 +12,7 @@ ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 
 define('BACKUP_MANAGER', true);
-require_once '../config.php';
+require_once dirname(__DIR__) . '/config.php';
 
 $db = new Database();
 $auth = new Auth($db);
@@ -80,7 +80,12 @@ try {
 }
 
 function handleStartBackup() {
-    global $backupManager, $user, $auth, $input;
+    global $backupManager, $user, $auth, $input, $db;
+    
+    // Debug logging
+    $logFile = '/var/www/html/backup_package/logs/api_debug.log';
+    file_put_contents($logFile, date('[Y-m-d H:i:s] ') . "API START BACKUP CALLED\n", FILE_APPEND);
+    file_put_contents($logFile, date('[Y-m-d H:i:s] ') . "Input: " . print_r($input, true) . "\n", FILE_APPEND);
     
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         throw new Exception('Method not allowed');
@@ -91,6 +96,9 @@ function handleStartBackup() {
     if (!$configId) {
         throw new Exception('Configuration ID required');
     }
+    
+    // Log the config ID being executed
+    file_put_contents($logFile, date('[Y-m-d H:i:s] ') . "Executing backup for config ID: {$configId}\n", FILE_APPEND);
     
     // Validate configuration exists
     $config = $backupManager->getConfigs();
@@ -139,7 +147,7 @@ function handleStartBackup() {
 }
 
 function handleGetStatus() {
-    global $db;
+    global $db, $backupManager;
     
     $historyId = $_GET['history_id'] ?? null;
     
@@ -168,7 +176,7 @@ function handleGetStatus() {
 }
 
 function handleListBackups() {
-    global $backupManager;
+    global $backupManager, $db;
     
     $limit = (int)($_GET['limit'] ?? 10);
     $offset = (int)($_GET['offset'] ?? 0);
@@ -184,7 +192,7 @@ function handleListBackups() {
 }
 
 function handleDeleteBackup() {
-    global $db, $user;
+    global $db, $user, $backupManager;
     
     if ($_SERVER['REQUEST_METHOD'] !== 'DELETE') {
         throw new Exception('Method not allowed');
@@ -226,7 +234,7 @@ function handleDeleteBackup() {
 }
 
 function handleDownloadBackup() {
-    global $db;
+    global $db, $user;
     
     $fileId = $_GET['file_id'] ?? null;
     
