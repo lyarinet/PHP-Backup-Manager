@@ -112,8 +112,8 @@ function discoverMysqlDatabases($host, $username, $password) {
     // Parse database list
     foreach ($output as $line) {
         $line = trim($line);
-        // Skip system databases and empty lines
-        if (!empty($line) && !in_array($line, ['Database', 'information_schema', 'performance_schema', 'mysql', 'sys'])) {
+        // Skip only the header and empty lines, include more databases
+        if (!empty($line) && $line !== 'Database') {
             $databases[] = $line;
         }
     }

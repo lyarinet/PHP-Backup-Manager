@@ -1,7 +1,0 @@
-[2025-10-25 12:59:41] [INFO] Backing up: /var/big/test1
-[2025-10-25 12:59:41] [INFO] Successfully backed up: /var/big/test1 -> /opt/backups/2025-10-25_12-59-41/files/test1_2025-10-25_12-59-41.tar.gz
-[2025-10-25 12:59:41] [INFO] Backing up: /var/big/test2
-[2025-10-25 12:59:41] [INFO] Successfully backed up: /var/big/test2 -> /opt/backups/2025-10-25_12-59-41/files/test2_2025-10-25_12-59-41.tar.gz
-[2025-10-25 12:59:41] [INFO] Backing up: /var/big/test3
-[2025-10-25 12:59:41] [INFO] Successfully backed up: /var/big/test3 -> /opt/backups/2025-10-25_12-59-41/files/test3_2025-10-25_12-59-41.tar.gz
-[2025-10-25 12:59:41] [INFO] File backup completed: 3 successful, 0 failed
