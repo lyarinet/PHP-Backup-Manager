@@ -690,6 +690,10 @@ $successMessages = [
             // Reset form action
             document.getElementById('formAction').value = 'create';
             document.getElementById('configId').value = '';
+            
+            // Reset cloud storage settings
+            document.getElementById('cloud_enabled').checked = false;
+            document.getElementById('cloud_provider_id').value = '';
         }
         
         function editConfig(config) {
@@ -770,6 +774,24 @@ $successMessages = [
                     console.log('PostgreSQL config loaded');
                     break;
             }
+            
+            // Load cloud storage settings
+            if (configData.cloud_enabled) {
+                document.getElementById('cloud_enabled').checked = true;
+            } else {
+                document.getElementById('cloud_enabled').checked = false;
+            }
+            
+            if (configData.cloud_provider_id) {
+                document.getElementById('cloud_provider_id').value = configData.cloud_provider_id;
+            } else {
+                document.getElementById('cloud_provider_id').value = '';
+            }
+            
+            console.log('Cloud settings loaded:', {
+                enabled: configData.cloud_enabled,
+                provider_id: configData.cloud_provider_id
+            });
             
             toggleConfigFields();
             

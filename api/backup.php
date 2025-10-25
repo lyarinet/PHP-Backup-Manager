@@ -237,25 +237,65 @@ function handleDownloadBackup() {
     global $db, $user;
     
     $fileId = $_GET['file_id'] ?? null;
+    $historyId = $_GET['history_id'] ?? null;
     
-    if (!$fileId) {
-        throw new Exception('File ID required');
+    if (!$fileId && !$historyId) {
+        throw new Exception('File ID or History ID required');
     }
     
-    $file = $db->fetch("SELECT * FROM backup_files WHERE id = ?", [$fileId]);
-    
-    if (!$file || !file_exists($file['file_path'])) {
-        throw new Exception('File not found');
+    if ($fileId) {
+        // Download specific file
+        $file = $db->fetch("SELECT * FROM backup_files WHERE id = ?", [$fileId]);
+        
+        if (!$file || !file_exists($file['file_path'])) {
+            throw new Exception('File not found');
+        }
+        
+        // Set download headers
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="' . basename($file['file_path']) . '"');
+        header('Content-Length: ' . filesize($file['file_path']));
+        
+        // Output file
+        readfile($file['file_path']);
+        exit;
+        
+    } elseif ($historyId) {
+        // Download all files for a history as a ZIP archive
+        $files = $db->fetchAll("SELECT * FROM backup_files WHERE history_id = ?", [$historyId]);
+        
+        if (empty($files)) {
+            throw new Exception('No files found for this backup');
+        }
+        
+        // Create ZIP archive
+        $zip = new ZipArchive();
+        $zipFileName = tempnam(sys_get_temp_dir(), 'backup_') . '.zip';
+        
+        if ($zip->open($zipFileName, ZipArchive::CREATE) !== TRUE) {
+            throw new Exception('Cannot create ZIP archive');
+        }
+        
+        foreach ($files as $file) {
+            if (file_exists($file['file_path'])) {
+                $zip->addFile($file['file_path'], basename($file['file_path']));
+            }
+        }
+        
+        $zip->close();
+        
+        // Set download headers for ZIP
+        header('Content-Type: application/zip');
+        header('Content-Disposition: attachment; filename="backup_' . $historyId . '.zip"');
+        header('Content-Length: ' . filesize($zipFileName));
+        
+        // Output ZIP file
+        readfile($zipFileName);
+        
+        // Clean up
+        unlink($zipFileName);
+        exit;
     }
-    
-    // Set download headers
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="' . basename($file['file_path']) . '"');
-    header('Content-Length: ' . filesize($file['file_path']));
-    
-    // Output file
-    readfile($file['file_path']);
-    exit;
 }
 
 // Flush output buffer

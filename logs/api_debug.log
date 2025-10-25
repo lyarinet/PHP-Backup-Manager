@@ -46,3 +46,35 @@
 )
 
 [2025-10-25 14:58:19] Executing backup for config ID: 5
+[2025-10-25 15:05:06] API START BACKUP CALLED
+[2025-10-25 15:05:06] Input: Array
+(
+    [action] => start
+    [config_id] => 10
+)
+
+[2025-10-25 15:05:06] Executing backup for config ID: 10
+[2025-10-25 15:05:14] API START BACKUP CALLED
+[2025-10-25 15:05:14] Input: Array
+(
+    [action] => start
+    [config_id] => 5
+)
+
+[2025-10-25 15:05:14] Executing backup for config ID: 5
+[2025-10-25 15:13:19] API START BACKUP CALLED
+[2025-10-25 15:13:19] Input: Array
+(
+    [action] => start
+    [config_id] => 10
+)
+
+[2025-10-25 15:13:19] Executing backup for config ID: 10
+[2025-10-25 15:13:27] API START BACKUP CALLED
+[2025-10-25 15:13:27] Input: Array
+(
+    [action] => start
+    [config_id] => 5
+)
+
+[2025-10-25 15:13:27] Executing backup for config ID: 5

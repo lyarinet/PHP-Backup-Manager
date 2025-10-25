@@ -58,3 +58,43 @@
 [2025-10-25 14:58:28] [INFO] Backing up: /var/www/isp-50-from-bill/
 [2025-10-25 14:58:28] [INFO] Successfully backed up: /var/www/isp-50-from-bill/ -> /opt/backups/2025-10-25_14-58-19/files/isp-50-from-bill_2025-10-25_14-58-28.tar.gz
 [2025-10-25 14:58:28] [INFO] File backup completed: 3 successful, 0 failed
+[2025-10-25 15:05:06] [INFO] Backing up MySQL database: ISP-DEMO-5049
+[2025-10-25 15:05:06] [INFO] Successfully backed up MySQL: ISP-DEMO-5049
+[2025-10-25 15:05:06] [INFO] Backing up MySQL database: ISP-NAB-5053
+[2025-10-25 15:05:06] [INFO] Successfully backed up MySQL: ISP-NAB-5053
+[2025-10-25 15:05:06] [INFO] Backing up MySQL database: ISP-Shakeel-5051
+[2025-10-25 15:05:06] [INFO] Successfully backed up MySQL: ISP-Shakeel-5051
+[2025-10-25 15:05:06] [INFO] Backing up MySQL database: ISP-Super-5052
+[2025-10-25 15:05:06] [INFO] Successfully backed up MySQL: ISP-Super-5052
+[2025-10-25 15:05:06] [INFO] Backing up MySQL database: ISP-Taimoor-5054
+[2025-10-25 15:05:06] [INFO] Successfully backed up MySQL: ISP-Taimoor-5054
+[2025-10-25 15:05:06] [INFO] Backing up MySQL database: isp_billing
+[2025-10-25 15:05:06] [INFO] Successfully backed up MySQL: isp_billing
+[2025-10-25 15:05:06] [INFO] MySQL backup completed: 6 successful, 0 failed
+[2025-10-25 15:05:14] [INFO] Backing up: /var/www/html
+[2025-10-25 15:05:16] [INFO] Successfully backed up: /var/www/html -> /opt/backups/2025-10-25_15-05-14/files/html_2025-10-25_15-05-14.tar.gz
+[2025-10-25 15:05:16] [INFO] Backing up: /var/www/instances/
+[2025-10-25 15:05:18] [INFO] Successfully backed up: /var/www/instances/ -> /opt/backups/2025-10-25_15-05-14/files/instances_2025-10-25_15-05-16.tar.gz
+[2025-10-25 15:05:18] [INFO] Backing up: /var/www/isp-50-from-bill/
+[2025-10-25 15:05:18] [INFO] Successfully backed up: /var/www/isp-50-from-bill/ -> /opt/backups/2025-10-25_15-05-14/files/isp-50-from-bill_2025-10-25_15-05-18.tar.gz
+[2025-10-25 15:05:18] [INFO] File backup completed: 3 successful, 0 failed
+[2025-10-25 15:13:19] [INFO] Backing up MySQL database: ISP-DEMO-5049
+[2025-10-25 15:13:19] [INFO] Successfully backed up MySQL: ISP-DEMO-5049
+[2025-10-25 15:13:19] [INFO] Backing up MySQL database: ISP-NAB-5053
+[2025-10-25 15:13:19] [INFO] Successfully backed up MySQL: ISP-NAB-5053
+[2025-10-25 15:13:19] [INFO] Backing up MySQL database: ISP-Shakeel-5051
+[2025-10-25 15:13:19] [INFO] Successfully backed up MySQL: ISP-Shakeel-5051
+[2025-10-25 15:13:19] [INFO] Backing up MySQL database: ISP-Super-5052
+[2025-10-25 15:13:19] [INFO] Successfully backed up MySQL: ISP-Super-5052
+[2025-10-25 15:13:19] [INFO] Backing up MySQL database: ISP-Taimoor-5054
+[2025-10-25 15:13:19] [INFO] Successfully backed up MySQL: ISP-Taimoor-5054
+[2025-10-25 15:13:19] [INFO] Backing up MySQL database: isp_billing
+[2025-10-25 15:13:19] [INFO] Successfully backed up MySQL: isp_billing
+[2025-10-25 15:13:19] [INFO] MySQL backup completed: 6 successful, 0 failed
+[2025-10-25 15:13:27] [INFO] Backing up: /var/www/html
+[2025-10-25 15:13:29] [INFO] Successfully backed up: /var/www/html -> /opt/backups/2025-10-25_15-13-27/files/html_2025-10-25_15-13-27.tar.gz
+[2025-10-25 15:13:29] [INFO] Backing up: /var/www/instances/
+[2025-10-25 15:13:31] [INFO] Successfully backed up: /var/www/instances/ -> /opt/backups/2025-10-25_15-13-27/files/instances_2025-10-25_15-13-29.tar.gz
+[2025-10-25 15:13:31] [INFO] Backing up: /var/www/isp-50-from-bill/
+[2025-10-25 15:13:31] [INFO] Successfully backed up: /var/www/isp-50-from-bill/ -> /opt/backups/2025-10-25_15-13-27/files/isp-50-from-bill_2025-10-25_15-13-31.tar.gz
+[2025-10-25 15:13:31] [INFO] File backup completed: 3 successful, 0 failed
