@@ -143,7 +143,7 @@ $whitelist = $ipWhitelist->getWhitelist();
                 
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ipSettingsDropdown" role="button" data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle me-1"></i>
                             <?php echo htmlspecialchars($user['username']); ?>
                         </a>

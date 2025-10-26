@@ -3031,3 +3031,75 @@ isp_billing
 )
 
 [2025-10-25 15:22:29] Rows affected: 1
+[2025-10-26 13:01:58] DATABASE - update() called
+[2025-10-26 13:01:58] SQL: UPDATE backup_history SET end_time = :end_time, status = :status, size_bytes = :size_bytes, file_count = :file_count WHERE id = :where_param_0
+[2025-10-26 13:01:58] Params: Array
+(
+    [end_time] => 2025-10-26 13:01:58
+    [status] => completed
+    [size_bytes] => 42300522
+    [file_count] => 3
+    [where_param_0] => 93
+)
+
+[2025-10-26 13:01:58] Rows affected: 1
+[2025-10-26 13:01:58] DATABASE - update() called
+[2025-10-26 13:01:58] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-26 13:01:58] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 11
+)
+
+[2025-10-26 13:01:58] Rows affected: 1
+[2025-10-26 13:01:59] DATABASE - update() called
+[2025-10-26 13:01:59] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, error_message = :error_message, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-26 13:01:59] Params: Array
+(
+    [upload_status] => failed
+    [error_message] => Cloud upload failed for file: /opt/backups/2025-10-26_13-01-54/files/html_2025-10-26_13-01-54.tar.gz
+    [upload_end] => 2025-10-26 13:01:59
+    [where_param_0] => 11
+)
+
+[2025-10-26 13:01:59] Rows affected: 1
+[2025-10-26 13:01:59] DATABASE - update() called
+[2025-10-26 13:01:59] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-26 13:01:59] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 12
+)
+
+[2025-10-26 13:01:59] Rows affected: 1
+[2025-10-26 13:01:59] DATABASE - update() called
+[2025-10-26 13:01:59] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, error_message = :error_message, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-26 13:01:59] Params: Array
+(
+    [upload_status] => failed
+    [error_message] => Cloud upload failed for file: /opt/backups/2025-10-26_13-01-54/files/instances_2025-10-26_13-01-56.tar.gz
+    [upload_end] => 2025-10-26 13:01:59
+    [where_param_0] => 12
+)
+
+[2025-10-26 13:01:59] Rows affected: 1
+[2025-10-26 13:01:59] DATABASE - update() called
+[2025-10-26 13:01:59] SQL: UPDATE cloud_uploads SET upload_status = :upload_status WHERE id = :where_param_0
+[2025-10-26 13:01:59] Params: Array
+(
+    [upload_status] => uploading
+    [where_param_0] => 13
+)
+
+[2025-10-26 13:01:59] Rows affected: 1
+[2025-10-26 13:01:59] DATABASE - update() called
+[2025-10-26 13:01:59] SQL: UPDATE cloud_uploads SET upload_status = :upload_status, error_message = :error_message, upload_end = :upload_end WHERE id = :where_param_0
+[2025-10-26 13:01:59] Params: Array
+(
+    [upload_status] => failed
+    [error_message] => Cloud upload failed for file: /opt/backups/2025-10-26_13-01-54/files/isp-50-from-bill_2025-10-26_13-01-58.tar.gz
+    [upload_end] => 2025-10-26 13:01:59
+    [where_param_0] => 13
+)
+
+[2025-10-26 13:01:59] Rows affected: 1

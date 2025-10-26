@@ -133,3 +133,13 @@
 [2025-10-25 15:22:28] [INFO] Successfully uploaded backup file to cloud: /backups/ISP_Billing_Files_-_Multiple_Locations/instances_2025-10-25_15-22-22.tar.gz
 [2025-10-25 15:22:29] [INFO] Successfully uploaded backup file to cloud: /backups/ISP_Billing_Files_-_Multiple_Locations/isp-50-from-bill_2025-10-25_15-22-24.tar.gz
 [2025-10-25 15:22:29] [INFO] Successfully uploaded 3/3 backup files to cloud
+[2025-10-26 13:01:54] [INFO] Backing up: /var/www/html
+[2025-10-26 13:01:56] [INFO] Successfully backed up: /var/www/html -> /opt/backups/2025-10-26_13-01-54/files/html_2025-10-26_13-01-54.tar.gz
+[2025-10-26 13:01:56] [INFO] Backing up: /var/www/instances/
+[2025-10-26 13:01:58] [INFO] Successfully backed up: /var/www/instances/ -> /opt/backups/2025-10-26_13-01-54/files/instances_2025-10-26_13-01-56.tar.gz
+[2025-10-26 13:01:58] [INFO] Backing up: /var/www/isp-50-from-bill/
+[2025-10-26 13:01:58] [INFO] Successfully backed up: /var/www/isp-50-from-bill/ -> /opt/backups/2025-10-26_13-01-54/files/isp-50-from-bill_2025-10-26_13-01-58.tar.gz
+[2025-10-26 13:01:58] [INFO] File backup completed: 3 successful, 0 failed
+[2025-10-26 13:01:59] [ERROR] Cloud upload failed for file /opt/backups/2025-10-26_13-01-54/files/html_2025-10-26_13-01-54.tar.gz: Cloud upload failed for file: /opt/backups/2025-10-26_13-01-54/files/html_2025-10-26_13-01-54.tar.gz
+[2025-10-26 13:01:59] [ERROR] Cloud upload failed for file /opt/backups/2025-10-26_13-01-54/files/instances_2025-10-26_13-01-56.tar.gz: Cloud upload failed for file: /opt/backups/2025-10-26_13-01-54/files/instances_2025-10-26_13-01-56.tar.gz
+[2025-10-26 13:01:59] [ERROR] Cloud upload failed for file /opt/backups/2025-10-26_13-01-54/files/isp-50-from-bill_2025-10-26_13-01-58.tar.gz: Cloud upload failed for file: /opt/backups/2025-10-26_13-01-54/files/isp-50-from-bill_2025-10-26_13-01-58.tar.gz
