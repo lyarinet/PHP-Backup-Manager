@@ -4,6 +4,9 @@ A comprehensive web-based backup management system with SQLite database, user au
 
 <img width="1917" height="901" alt="image" src="https://github.com/user-attachments/assets/e288b1a3-b3d9-4034-8f70-f7a89a491150" />
 
+<img width="1919" height="896" alt="image" src="https://github.com/user-attachments/assets/68aa8706-771a-4686-9374-2986e45bce9a" />
+
+
 ## ✨ Key Features
 
 ### 🔐 Authentication & Security
