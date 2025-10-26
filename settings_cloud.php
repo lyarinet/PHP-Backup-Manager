@@ -134,9 +134,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
             case 'toggle_provider':
                 $providerId = (int)($_POST['provider_id'] ?? 0);
-                $enabled = isset($_POST['enabled']);
+                $enabled = (int)($_POST['enabled'] ?? 0);
                 
-                $db->query("UPDATE cloud_providers SET enabled = ? WHERE id = ?", [$enabled ? 1 : 0, $providerId]);
+                $db->query("UPDATE cloud_providers SET enabled = ? WHERE id = ?", [$enabled, $providerId]);
                 
                 $status = $enabled ? 'enabled' : 'disabled';
                 $db->logActivity($user['id'], 'toggle_cloud_provider', "Cloud provider {$status}");

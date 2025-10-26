@@ -555,6 +555,11 @@ class BackupManager {
             'current_step' => 'Initializing backup...'
         ]);
         
+        // Check if insert was successful
+        if (!$historyId) {
+            throw new Exception("Failed to create backup history record");
+        }
+        
         return $historyId;
     }
 

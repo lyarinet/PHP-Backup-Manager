@@ -117,6 +117,11 @@ function handleStartBackup() {
     // Start backup and get history ID
     $historyId = $backupManager->startBackup($configId, $user['id']);
     
+    // Validate history ID
+    if (!$historyId) {
+        throw new Exception('Failed to create backup history record');
+    }
+    
     // For now, run backup synchronously to test progress tracking
     // TODO: Make this truly asynchronous later
     try {
@@ -128,12 +133,14 @@ function handleStartBackup() {
             'history_id' => $historyId
         ]);
     } catch (Exception $e) {
-        // Update backup status to failed
-        $db->update('backup_history', [
-            'status' => 'failed',
-            'end_time' => date('Y-m-d H:i:s'),
-            'error_log' => $e->getMessage()
-        ], 'id = ?', [$historyId]);
+        // Update backup status to failed (only if historyId is valid)
+        if ($historyId) {
+            $db->update('backup_history', [
+                'status' => 'failed',
+                'end_time' => date('Y-m-d H:i:s'),
+                'error_log' => $e->getMessage()
+            ], 'id = ?', [$historyId]);
+        }
         
         // Debug logging
         error_log("Backup API - Backup failed: " . $e->getMessage());

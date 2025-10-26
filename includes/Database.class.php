@@ -282,6 +282,12 @@ class Database {
         // Convert positional where params to named params
         $whereNamed = $where;
         $namedWhereParams = [];
+        
+        // Ensure $where is a string before using strpos
+        if (!is_string($where)) {
+            throw new Exception('WHERE clause must be a string');
+        }
+        
         $paramIndex = 0;
         while (strpos($whereNamed, '?') !== false) {
             $paramName = 'where_param_' . $paramIndex;
