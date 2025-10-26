@@ -59,6 +59,12 @@ body {
     color: var(--text-primary);
 }
 
+/* Dark theme body class support */
+body.dark-theme {
+    background-color: var(--light-color);
+    color: var(--text-primary);
+}
+
 /* Dark theme cards */
 [data-theme="dark"] .card {
     background-color: var(--card-bg);

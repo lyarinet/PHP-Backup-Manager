@@ -10,7 +10,61 @@ class ThemeManager {
     }
     
     init() {
-        // Apply saved theme or detect system preference
+        // Apply saved theme immediately to prevent FOUC
+        this.applyThemeImmediately();
+        
+        // Apply full theme initialization after DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.initializeTheme());
+        } else {
+            this.initializeTheme();
+        }
+        
+        // Also apply theme when body becomes available
+        if (!document.body) {
+            const observer = new MutationObserver((mutations) => {
+                if (document.body) {
+                    this.applyThemeImmediately();
+                    observer.disconnect();
+                }
+            });
+            observer.observe(document.documentElement, { childList: true });
+        }
+    }
+    
+    applyThemeImmediately() {
+        // Apply theme immediately without waiting for DOM
+        const savedTheme = localStorage.getItem(this.themeKey);
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        let theme = 'light';
+        if (savedTheme) {
+            theme = savedTheme;
+        } else if (systemPrefersDark) {
+            theme = 'dark';
+        }
+        
+        // Apply theme to HTML element immediately
+        const html = document.documentElement;
+        if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+        } else {
+            html.removeAttribute('data-theme');
+        }
+        
+        // Also apply to body for immediate visual feedback
+        const body = document.body;
+        if (body) {
+            if (theme === 'dark') {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+        }
+    }
+    
+    initializeTheme() {
+        // Full theme initialization after DOM is ready
         const savedTheme = localStorage.getItem(this.themeKey);
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
@@ -32,11 +86,14 @@ class ThemeManager {
     
     setTheme(theme) {
         const html = document.documentElement;
+        const body = document.body;
         
         if (theme === 'dark') {
             html.setAttribute('data-theme', 'dark');
+            if (body) body.classList.add('dark-theme');
         } else {
             html.removeAttribute('data-theme');
+            if (body) body.classList.remove('dark-theme');
         }
         
         // Update theme toggle button if it exists

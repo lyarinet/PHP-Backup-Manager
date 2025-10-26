@@ -2,6 +2,8 @@
 
 A comprehensive web-based backup management system with SQLite database, user authentication, and modern web interface. Successfully transformed from a bash script into a full-featured PHP web application.
 
+<img width="1917" height="901" alt="image" src="https://github.com/user-attachments/assets/e288b1a3-b3d9-4034-8f70-f7a89a491150" />
+
 ## ✨ Key Features
 
 ### 🔐 Authentication & Security

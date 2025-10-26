@@ -93,6 +93,52 @@ $whitelist = $ipWhitelist->getWhitelist();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <script>
+        // Apply theme immediately to prevent FOUC
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('backup_manager_theme');
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                
+                let theme = 'light';
+                if (savedTheme) {
+                    theme = savedTheme;
+                } else if (systemPrefersDark) {
+                    theme = 'dark';
+                }
+                
+                // Apply theme to HTML element immediately
+                if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                
+                // Also apply to body when it becomes available
+                function applyBodyTheme() {
+                    if (document.body) {
+                        if (theme === 'dark') {
+                            document.body.classList.add('dark-theme');
+                        } else {
+                            document.body.classList.remove('dark-theme');
+                        }
+                    }
+                }
+                
+                // Apply immediately if body exists
+                applyBodyTheme();
+                
+                // Also apply when DOM is ready
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', applyBodyTheme);
+                }
+                
+            } catch (e) {
+                console.error('Theme application error:', e);
+            }
+        })();
+    </script>
+    <script src="assets/js/theme.js"></script>
 </head>
 <body>
     <!-- Navigation -->
