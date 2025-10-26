@@ -1,0 +1,39 @@
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+backups.db
+
+# Log files
+logs/
+*.log
+
+# Backup files
+/opt/backups/
+backups/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Vendor directory (if using Composer)
+vendor/
+
+# Configuration files with secrets
+config.local.php
